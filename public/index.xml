@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>576i</title>
+    <title>576i.nz on 576i</title>
     <link>https://576i.nz/</link>
-    <description>Recent content on 576i</description>
+    <description>Recent content in 576i.nz on 576i</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Mar 2021 20:29:17 +1300</lastBuildDate><atom:link href="https://576i.nz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Mar 2020 20:29:17 +1300</lastBuildDate><atom:link href="https://576i.nz/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Who am I?</title>
+      <title>About</title>
       <link>https://576i.nz/about/</link>
       <pubDate>Wed, 17 Mar 2021 21:52:29 +1300</pubDate>
       
@@ -19,13 +19,24 @@ What is this site about? This little site is essentially a wax lyrical about wha
     </item>
     
     <item>
-      <title>WTF is 576i and what does that mean?</title>
-      <link>https://576i.nz/wtf576i/</link>
-      <pubDate>Wed, 17 Mar 2021 20:29:17 +1300</pubDate>
+      <title>Disclaimers</title>
+      <link>https://576i.nz/disclaimers/</link>
+      <pubDate>Wed, 17 Mar 2021 21:52:29 +1300</pubDate>
       
-      <guid>https://576i.nz/wtf576i/</guid>
-      <description>WTF is 576i and what does that mean? 576i is a display specification for regular format PAL television. It stands for 576 lines vertically, interlaced over 50 fields.
-Let&amp;rsquo;s break that down. Before the days of progressive digital video like we have on all modern computers and digital television broadcasts, video for television was encoded using analog standards. There were/are three competing standards for this — NTSC (National Television System Committee), PAL (Phase Alternating Line), and SECAM.</description>
+      <guid>https://576i.nz/disclaimers/</guid>
+      <description>The content on this site is written and produced by me solely for educational and entertainment purposes.
+I make absolutely no guarantee that anything on this site is 100% factual, and any and all information should be appropriately cross-referenced and researched before trusting it blindly.
+All instructional material reflects purely my experiences following certain procedures, and may not accurately represent yours. There is no warranty, guarantee, or protection for any content on this site, and damages to your equipment and software resulting from following my site are not my responsibility.</description>
+    </item>
+    
+    <item>
+      <title>WTF is 576i and what does that mean?</title>
+      <link>https://576i.nz/576i/</link>
+      <pubDate>Thu, 12 Mar 2020 20:29:17 +1300</pubDate>
+      
+      <guid>https://576i.nz/576i/</guid>
+      <description>576i is a display specification for regular format PAL television. It stands for 576 lines vertically, interlaced over 50 fields.
+Let&amp;rsquo;s break that down. Before the days of progressive digital video like we have on all modern computers and digital television broadcasts, video for television was encoded using analog standards. There were/are three competing standards for this — NTSC (National Television System Committee), PAL (Phase Alternating Line), and SECAM. SECAM is essentially a slightly modified PAL, so there are two major standards at play here.</description>
     </item>
     
   </channel>

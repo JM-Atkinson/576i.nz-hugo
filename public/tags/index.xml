@@ -5,6 +5,25 @@
     <link>https://576i.nz/tags/</link>
     <description>Recent content in Tags on 576i</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://576i.nz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Mar 2020 20:29:17 +1300</lastBuildDate><atom:link href="https://576i.nz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>meta</title>
+      <link>https://576i.nz/tags/meta/</link>
+      <pubDate>Thu, 12 Mar 2020 20:29:17 +1300</pubDate>
+      
+      <guid>https://576i.nz/tags/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>retro tech</title>
+      <link>https://576i.nz/tags/retro-tech/</link>
+      <pubDate>Thu, 12 Mar 2020 20:29:17 +1300</pubDate>
+      
+      <guid>https://576i.nz/tags/retro-tech/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
