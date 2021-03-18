@@ -1,0 +1,85 @@
+baseURL: https://576i.nz
+languageCode: en-us
+title: 576i
+theme: vanilla-bootstrap-hugo-theme
+googleAnalytics: UA-120501591-1
+
+taxonomies:
+  tag: tags
+
+permalinks:
+  post: /:filename/
+
+# See https://feathericons.com/
+# The value of pre is the icon name
+menu:
+  nav:
+  - name: Home
+    pre: home
+    url: /
+    weight: 1
+  - name: Articles
+    pre: edit
+    url: /post/
+    weight: 2
+  - name: Tags
+    pre: tag
+    url: /tags/
+    weight: 3
+  - name: About
+    pre: smile
+    url: /about/
+    weight: 4
+  - name: LinkedIn
+    pre: linkedin
+    url: https://www.linkedin.com/in/josh-atkinson/
+    weight: 5
+  - name: GitHub
+    pre: github
+    url: https://github.com/JM-Atkinson/
+    weight: 6
+  - name: Twitch
+    pre: twitch
+    url: https://www.twitch.tv/576i
+    weight: 7
+
+params:
+  includeBootstrapJs: false
+  showActiveNav: true
+  containerMaxWidth: 850px
+  dateFormat: January 2, 2006
+#  homeText: Welcome to the Vanilla theme demo. Have a look around. Maybe even eat some ice cream. NOTE: This is now fufilled via _index.md in /content
+  footerText: "[About](/about) • [Disclaimers](/disclaimers) • [License](http://creativecommons.org/licenses/by/4.0/) | Copyright © Josh Atkinson MMXXI"
+  hideFooter: false
+  katex: true
+
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute: true
+      autoHeadingID: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xHTML: false
+  highlight:
+    codeFences: true
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: monokai
+    tabWidth: 4
+  tableOfContents:
+    endLevel: 6
+    startLevel: 2

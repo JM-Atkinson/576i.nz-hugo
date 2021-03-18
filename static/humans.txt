@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Josh Atkinson -- Creator, designer and basically everything else you can think of
+
+# THANKS
+
+    God, my mother, and all of Luxembourg
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    Nginx configs, Bootstrap
