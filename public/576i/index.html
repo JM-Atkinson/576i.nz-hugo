@@ -34,11 +34,12 @@
   color: #fff;
 }
 #nav-border {
-  border-bottom: 1px solid #212529;
  
-  border-left: 1px solid #212529;
-  border-right: 1px solid #212529;
+ 
+ 
   background-color: #ffc107;
+  border-radius: 12px;
+  margin-top: 0.5em;
 }
 #main {
   margin-top: 1em;
@@ -266,9 +267,9 @@ audio {
 <p>But what are fields? - This is the cool part. If you ever watched television on a CRT did you ever wonder why it was so much more fluid than video on computers (at least before 60fps become common)? This is because a little trick is pulled by both NTSC and PAL to &lsquo;double&rsquo; the frame rate, which makes it look more fluid to the human eye. This process is called interlacing. Interlacing takes every second line in a frame and delays it by (in the case of NTSC) 1/60th of a second. What this results in is that instead of 30 whole <em>frames</em> in a second being displayed, 60 <em>fields</em> are actually displayed, as half the image comes every 1/60th of a second. On displays that are designed to work with interlaced video, this makes the video actually look like 60 <em>frames</em> per second , even though it&rsquo;s not. The loss of quality of those missing 30 true frames per second is almost imperceivable to the human eye, which is why they developed this technique to save spectrum for broadcast, instead of changing the number of lines, which would&rsquo;ve reduced the quality visibly.</p>
 <h5 id="why-is-interlacing-bad-then---ive-heard-people-say-its-bad">Why is interlacing bad then? - I&rsquo;ve heard people say it&rsquo;s bad.</h5>
 <p>Well, it&rsquo;s not, <em>at least when it&rsquo;s displayed correctly.</em> Progressive displays (whose primary difference from interlacing is that it displays a whole frame at once) are incapable of showing interlacing correctly, and actually show the ever so slight difference in frames as they display the two separate field sets simultaneously. This also has the effect of halving the effective frame rate. What this looks like is that edges in frames appear sawtoothed:</p>
-<p><img src="/assets/img/freddie1.jpg" alt="Interlaced Freddie" title="Interlaced Freddie"></p>
+<p><img src="/images/freddie1.jpg" alt="Interlaced Freddie" title="Interlaced Freddie"></p>
 <p>An interesting effect is created on scene changes, where two images appear together with alternating lines showing each image:</p>
-<p><img src="/assets/img/freddie2.jpg" alt="Freddie and crowd" title="Freddie and crowd"></p>
+<p><img src="/images/freddie2.jpg" alt="Freddie and crowd" title="Freddie and crowd"></p>
 <p>You can mitigate this by converting interlaced video to progressive via conversion tools, which get more and more advanced every day. <a href="https://handbrake.fr/">Handbrake</a>, for example, can do this, and techniques to achieve this with as little information loss as possible via machine learning are also developing, but the issue is that these techniques take time and effort to apply, and most people just don&rsquo;t care. Which means that when they upload their family VHS tapes, old TV shows and other interlaced media, we see the jaggies on YouTube and where-ever else the content gets shared. This has led to minor stigma against interlacing.</p>
 <p>The truth of it is that interlacing <em>should</em> die. Displays that can correctly process interlaced content are becoming rarer by the day as virtually every new device since 2010 uses a progressive display. Computers have used progressive displays since their inception, and that won&rsquo;t change anytime soon. This isn&rsquo;t a problem now as we have the ability to have true 60fps video, but it was a cool technique back in the day.</p>
 <h4 id="so-what-about-pal">So what about PAL?</h4>
@@ -302,7 +303,7 @@ audio {
 </table>
 
 <p>So PAL has more lines but less fields. This means the definition is better, but the motion is less fluid. And, functionally, thats the only difference between NTSC and PAL. They both use interlacing, fields, lines and even the same colour encoding scheme. To most people, they&rsquo;d struggle to tell the difference if sat down in front of two TVs, one showing NTSC video, and one showing PAL. But the difference is there, and because of it a huge amount of products made between 1970 and 2010 (especially in Japan) come in both PAL and NTSC variants. One example is the Nintendo Wii. If you by a PAL Wii, you need to buy the corresponding PAL Wii games, as indicated by the encoding type on the DVD case:</p>
-<p><img src="/assets/img/wiipartypal.jpg" alt="Wii Party" title="Wii Party"></p>
+<p><img src="/images/wiipartypal.jpg" alt="Wii Party" title="Wii Party"></p>
 <p>The Nintendo Wii is actually capable of playing the opposing standards' games, but not without first jailbreaking it and un-region locking it. And even if the games work, the settings menu is borked.</p>
 <h4 id="you-still-havent-told-me-where-576i-comes-from">You still haven&rsquo;t told me where &lsquo;576i&rsquo; comes from!</h4>
 <p>In recent years, a quick standard to describe how a video is encoded has arisen from the apparent need to reduce confusion in video types. This standard is very simple: for interlaced video it&rsquo;s the number of lines with an &lsquo;i&rsquo; to indicate interlacing, so PAL is 576i! For progressive video it&rsquo;s the number of vertical pixels with a &lsquo;p&rsquo; to indicate progressive. This is a common misconception where people think the &lsquo;p&rsquo; means pixels, it does not! A standard Full HD monitor would be notated as 1080p.</p>
