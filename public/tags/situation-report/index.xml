@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>situation report on 576i</title>
+    <link>https://576i.nz/tags/situation-report/</link>
+    <description>Recent content in situation report on 576i</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Apr 2021 20:29:17 +1300</lastBuildDate><atom:link href="https://576i.nz/tags/situation-report/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Whatever happend to IPv4 extinction?</title>
+      <link>https://576i.nz/ipv6/</link>
+      <pubDate>Sat, 24 Apr 2021 20:29:17 +1300</pubDate>
+      
+      <guid>https://576i.nz/ipv6/</guid>
+      <description>So if you’ve paid any attention to news about the internet in the last thirty years you’ve probably heard that we’re going to imminently run out of IPv4 addresses, like, any day now. Various groups have been saying this since the 90’s, with RFCs describing the problem and everything. So why aren’t single IPv4 addresses the world’s most expensive numbers? Why are us lowly consumers allowed the luxury of having our very own hyper-scarce IPv4 address just for our house!</description>
+    </item>
+    
+  </channel>
+</rss>
