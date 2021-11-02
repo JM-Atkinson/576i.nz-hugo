@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on 576i</title>
+    <link>https://576i.nz/tags/programming/</link>
+    <description>Recent content in programming on 576i</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Nov 2021 23:29:49 +1300</lastBuildDate><atom:link href="https://576i.nz/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building notification functionality into my notes app</title>
+      <link>https://576i.nz/buildingnotifications/</link>
+      <pubDate>Tue, 02 Nov 2021 23:29:49 +1300</pubDate>
+      
+      <guid>https://576i.nz/buildingnotifications/</guid>
+      <description>Big thanks to binu.nz, matteas.nz, and pancake.nz for their help on this project.
+Earlier this year I moved to a new note taking solution, Trilium Notes. After a lengthy discovery process including learning about the world of networked brain apps and Zettlekasten, I settled on Trilium for several reasons: it&amp;rsquo;s open source, self-hosted with a browser interface, has extensive markup functionality including the ability to export to Markdown (this article was written in Trilium), and is extensible via a note type called a ‘script note’.</description>
+    </item>
+    
+  </channel>
+</rss>

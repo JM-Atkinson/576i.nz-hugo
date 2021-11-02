@@ -1,0 +1,461 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.82.1" />
+  <link rel="stylesheet" href="https://576i.nz/css/bootstrap.min.css">
+
+  
+  <meta name="google-site-verification" content="aPd56a002n6crex_xA9d-FjJ9KcOMeWAObVY5mxBje0" />
+
+  
+  <meta name="theme-color" content="#ffc107">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700|Source+Code+Pro" rel="stylesheet">
+
+  
+  
+  <title>Building notification functionality into my notes app | 576i</title>
+  <style>
+.container {
+  max-width: 850px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+ 
+  font-family: 'Maven Pro', sans-serif;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+ 
+ 
+ 
+  background-color: #ffc107;
+  border-radius: 12px;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+ 
+  font-family: 'Maven Pro', sans-serif;
+  text-align: justify;
+}
+h1,h2,h3,h4,h5 {
+  text-align: left;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+  border-radius: 12px;
+}
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  width: initial;
+}
+
+  
+
+ blockquote {
+  font-family: Georgia, serif;
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.25em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+  }
+
+blockquote:before {
+  display: block;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
+  }
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+  }
+      
+blockquote cite:before {
+  content: "\2014 \2009";
+  }
+
+</style>
+</head>
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> Home</a>
+  
+    
+    
+      
+      
+      
+      
+      
+       
+        
+        
+      
+    
+    
+    <a class="nav-link nav-link-active" href="/post/"><i data-feather="edit"></i> Articles</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/tags/"><i data-feather="tag"></i> Tags</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/about/"><i data-feather="smile"></i> About</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="https://www.linkedin.com/in/josh-atkinson/"><i data-feather="linkedin"></i> LinkedIn</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="https://github.com/JM-Atkinson/"><i data-feather="github"></i> GitHub</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="https://www.twitch.tv/576i"><i data-feather="twitch"></i> Twitch</a>
+  
+  </nav>
+</div>
+
+    <div class="container">
+      <main id="main">
+        
+
+<h1>Building notification functionality into my notes app</h1>
+
+
+<i data-feather="calendar"></i> <time datetime="2021-11-02">November 2, 2021</time>
+
+  <br>
+  <i data-feather="tag"></i>
+  
+  
+  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/internet-technologies">internet technologies</a>
+  
+  
+  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/programming">programming</a>
+  
+  
+  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/how-to">how-to</a>
+  
+
+<br><br>
+<p><em>Big thanks to</em> <a href="https://binu.nz"><em>binu.nz</em></a><em>,</em> <a href="https://matteas.nz"><em>matteas.nz</em></a><em>, and</em> <a href="https://pancake.nz"><em>pancake.nz</em></a> <em>for their help on this project.</em></p>
+<p>Earlier this year I moved to a new note taking solution, <a href="https://github.com/zadam/trilium">Trilium Notes</a>. After a lengthy discovery process including learning about the world of networked brain apps and Zettlekasten, I settled on Trilium for several reasons: it&rsquo;s open source, self-hosted with a browser interface, has extensive markup functionality including the ability to export to Markdown (this article was written in Trilium), and is <strong>extensible via a note type called a ‘</strong><a href="https://github.com/zadam/trilium/wiki/Scripts"><strong>script note</strong></a><strong>’.</strong> This allows you to extend functionality by simply writing JavaScript to run on either the frontend (chromium via electron) or backend (node.js) of the application. There are honestly so few downsides to this application, but if I had to list some it would be a slightly ugly interface (fixable via CSS), and no mobile app.</p>
+<p>Previously, with Google Keep, I used to write myself notes, and then add alerts to be reminded of their content when I needed it. This worked as a reminder system for me well. So, I&rsquo;ve set out to replicate this in Trilium, via the aforementioned script notes, and a self-hosted push notification service called <a href="https://gotify.net/">Gotify</a>. Let&rsquo;s get started.</p>
+<h2 id="architecture">Architecture</h2>
+<p>Trilium features a number of proof-of-concept implementations of script notes. One of these is a task manager, that allows you to group tasks in to categories, provide a to-do date, and a done date. These are stored in attributes called <code>todoDate</code> and <code>doneDate</code>, respectively.</p>
+<p>I have been using this task manager for a while now, so I&rsquo;d like to add notification functionality to it. The target functionality is that when a note&rsquo;s <code>todoDate</code> is the current date, I should get a push notification on my Android phone, with the title of the note as the notification content.</p>
+<h3 id="gotify">Gotify</h3>
+<p>To achieve this, I need a way of facilitating the notification on a mobile device. As Trilium has no mobile app, we can&rsquo;t use direct notification integration. Instead, we can use a notification service, such as <a href="https://gotify.net/">Gotify</a>. Gotify is an incredibly simple websocket based notification server. It takes notification messages in from ‘apps’, and publishes all notifications received to ‘clients’. Gotfiy has a webclient and an Android app, which provides the Android notification integration I&rsquo;m looking for.</p>
+<p>Gotify was trivial to set-up. I used <a href="https://docs.docker.com/compose/">docker-compose</a> to have a container up and running in about 10 minutes. My config ended up looking like this:</p>
+<pre><code>version: &quot;3&quot;
+
+services:
+  gotify:
+    image: gotify/server
+    restart: &quot;unless-stopped&quot;
+    ports:
+      - 8085:80
+    environment:
+      - TZ=&quot;Pacific/&lt;redacted&gt;&quot;
+    volumes:
+      - &quot;./gotify_data:/app/data&quot;
+      - &quot;./config.yml:/etc/gotify/config.yml&quot;
+</code></pre>
+<p>I&rsquo;ve added an additional volume where I&rsquo;ve overridden the default config.yml. I&rsquo;ll explain why later, but take note it was important for my implementation.</p>
+<p>Some additional configuration was required to allow websocket requests through my reverse proxy server, which also applies HTTPS encapsulation. Examples on how to do this can be found on the <a href="https://gotify.net/docs/nginx">Gotify website for all major reverse proxies</a>.</p>
+<p>So now we have Gotify up and running, let&rsquo;s test it. An easy first test can be achieved with curl:</p>
+<pre><code>josh@SATURNV-NT:~&gt; curl &quot;https://push.576i.nz/message?token=AHu8O88QRGLNaG0&quot; -F &quot;title=test 123&quot; -F &quot;message=holy guac it works&quot; -F &quot;priority=5&quot;
+</code></pre>
+<p>And the result:</p>
+<pre><code>{&quot;id&quot;:2,&quot;appid&quot;:1,&quot;message&quot;:&quot;holy guac it works&quot;,&quot;title&quot;:&quot;test 123&quot;,&quot;priority&quot;:5,&quot;date&quot;:&quot;2021-10-30T05:32:09.401684375Z&quot;}
+</code></pre>
+<p>We can see on the webclient they&rsquo;ve come through:</p>
+<p><img src="/images/gotify-testing.png" alt="Testing"></p>
+<p>Okay. So we have a working notification server. Now how do we implement this in Trilium?</p>
+<h3 id="websockets-and-javascript">Websockets and JavaScript</h3>
+<p>Converting our simple curl one-liner to JavaScript proved more… difficult. By the end of the process, I knew substantially more about the differences between web-browser JS, node.js JS, and how to structure a websocket request than I bargained for.</p>
+<p>Trilium, as a modern Electron webapp, is made up of two separate halves, the frontend and backend. The frontend runs in chromium (the embedded browser in Electron), and as such you can expect a typical web-browser based JS setup. The backend, in this case, is based on node.js. node.js doesn&rsquo;t implement a number of typical browser-based JS libraries.</p>
+<p>Naively, I started by writing the script externally in VSCode, testing in browser. Gotify&rsquo;s example script uses Axios, a library used for HTTP operations. I had difficulty getting it to work successfully, so I consulted the experts, who advised me to use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch</a>. Fetch is a native browser-based HTTP library, and with some tinkering, we got the following going:</p>
+<pre><code>const url = &quot;https://push.576i.nz/message?token=AHu8O88QRGLNaG0&quot;;
+
+let bodyFormData = new FormData();
+bodyFormData.append('title', 'hello from trilium');
+bodyFormData.append('message', 'omg it actually works from my note app');
+bodyFormData.append('priority', '5');
+
+fetch(url, {
+  method: &quot;POST&quot;,
+
+  headers: {
+    &quot;Content-Type&quot;: &quot;Content-Type: multipart/form-data; charset=utf-8; boundary='';&quot;
+  },
+  body: bodyFormData
+});
+</code></pre>
+<p>To get to this point, we had to wrestle with several speed bumps. You may recall I had overridden the default config for Gotify in my docker-compose.yml.</p>
+<p>The reason for this is so that I could add a CORS header to all requests. The scope of this article doesn&rsquo;t expand to CORS. but essentially the main thing that you need to know is that it&rsquo;s a security check based on domains. Gotify&rsquo;s Docker image has a number of environment variables that allow you to configure these headers, but the &lsquo;*&rsquo; required for any origin is incompatible with the yaml globbing in docker-compose. I circumvented this by simply storing the default config locally and then importing it into Docker as a volume, which allows me to specify this line in the configuration:</p>
+<pre><code>responseheaders: # response headers are added to every response (default: none)
+#    X-Custom-Header: &quot;custom value&quot;
+    Access-Control-Allow-Origin: &quot;*&quot;
+</code></pre>
+<p>This resolves the CORS issues.</p>
+<h3 id="trilium">Trilium</h3>
+<p>So, we have a working fetch-based script. I pulled this into Trilium, and loaded it up as a frontend script. Upon testing, it worked! So, how do I populate this push function with data from my todo notes? Turns out the ability to get attributes of notes (what the <code>todoDate</code> label is) can only be done from the backend. Okay, no problem, I can pass from the frontend to the backend to get the data I need, and do the rest of the logic in the frontend.</p>
+<p>The next snag is that Trilium&rsquo;s in-built triggers that will fire my script for me, can only be run from the backend. You can pass from the frontend to the backend, but not the inverse of this. What this means is that if your script starts in the backend, it cannot be passed to the frontend at any point. Okay, no problem. I can just put fetch function into the backend script and run everything entirely in the backend.</p>
+<p>Unfortunately, fetch is not implemented natively in node.js. This can be installed with npm, but with Trilium, I can&rsquo;t add packages to the backend. So I&rsquo;m stuck.</p>
+<p>Luckily, the Trilium backend implements Axios! This is only slightly annoying, because I could&rsquo;ve theoretically skipped the fetch stage entirely. However, it wasn&rsquo;t a waste as it gave good opportunity to debug the CORS headers.</p>
+<p>I rewrote the fetch request in Axois, based on the supplied example from Gotify:</p>
+<pre><code>const axios = require(&quot;axios&quot;);
+    
+    const url = &quot;https://push.576i.nz/message?token=AHu8O88QRGLNaG0&quot;;
+    let bodyFormData = {
+      title: a,
+      message: b,
+      priority: c
+    };
+
+    axios({
+      method: &quot;post&quot;,
+      headers: {
+        &quot;Content-Type&quot;: &quot;application/json&quot;
+      },
+      url: url,
+      data: bodyFormData
+    }
+</code></pre>
+<p>This was then added to a larger script that call&rsquo;s Trilium&rsquo;s API, following simple logic:</p>
+<ol>
+<li>Get today&rsquo;s date</li>
+<li>Convert this to ISO format and truncate it to just yyyy-mm-dd</li>
+<li>Get all notes with this value in the <code>todoDate</code> field as an array</li>
+<li>Iterate through this array and send a push request for each one</li>
+</ol>
+<p>So the final complete Trilium script is:</p>
+<pre><code>// Get current date and format it using the ISO standard
+let today = new Date();
+let isotoday = today.toISOString();
+
+// Get all notes with the label 'todoDate' and today's date as the value, truncating the time from the ISO date
+let todoToday = api.getNotesWithLabel(&quot;todoDate&quot;, isotoday.substring(0, 10))
+
+// Iterate through the array and send a push with the title as the message body
+for (let i = 0; i &lt; todoToday.length; i++) {
+  sendPush('Trilium Reminder', todoToday[i].title, 5)
+}
+
+function sendPush(a, b, c) {
+    const axios = require(&quot;axios&quot;);
+    
+    const url = &quot;https://push.576i.nz/message?token=AHu8O88QRGLNaG0&quot;;
+    let bodyFormData = {
+      title: a,
+      message: b,
+      priority: c
+    };
+
+    axios({
+      method: &quot;post&quot;,
+      headers: {
+        &quot;Content-Type&quot;: &quot;application/json&quot;
+      },
+      url: url,
+      data: bodyFormData
+    })
+};
+</code></pre>
+<p>As you can see, this works beautifully:</p>
+<p><img src="/images/gotify-working.png" alt="Working"></p>
+<p>And on mobile:</p>
+<p><img src="/images/gotify-phonenoti.jpg" alt="Phone"></p>
+<p><em>If you had any comments or feedback, drop me a line at</em> <a href="#root/lqptHG6sN2rj"><em>josh@576i.nz</em></a> <em>and I&rsquo;ll include interesting discussions on this page.</em></p>
+
+
+
+      </main>
+    </div>
+    
+<footer id="footer" class="mt-auto text-center text-muted">
+  <div class="container">
+    <a href="/about">About</a> • <a href="/disclaimers">Disclaimers</a> • <a href="http://creativecommons.org/licenses/by/4.0/">License</a> | Copyright © Josh Atkinson MMXXI
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/magula.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+
+    
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+
+    
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120501591-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-120501591-1');
+    </script>
+  
+
+  </body>
+</html>

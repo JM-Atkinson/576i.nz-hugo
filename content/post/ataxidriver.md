@@ -14,7 +14,7 @@ Having said this, I do think it’s completely valid, and perhaps, advised, to w
 
 I would think Jang Hoon made this film with the understanding that a large amount of it’s intended audience would have cultural knowledge of this event, so feel free to keep reading to get a primer on that understanding. It’s up to you!
 
-**A Short Korean History 101**
+## A Short Korean History 101
 
 This is a bit of a whistle-stop tour of Korean history from the end of WWII to the date A Taxi Driver is set, and it’s pretty quick - so strap in.
 

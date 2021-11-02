@@ -1,6 +1,7 @@
 ---
 title: 576i.nz
 ---
+<style>h1,h2,h3,h4,h5{text-align: center !important}</style>
 
 Welcome to my wax lyrical about technology, telco products, and other topics.
 

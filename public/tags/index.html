@@ -40,6 +40,7 @@
   background-color: #ffc107;
   border-radius: 12px;
   margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 #main {
   margin-top: 1em;
@@ -47,6 +48,9 @@
  
   font-family: 'Maven Pro', sans-serif;
   text-align: justify;
+}
+h1,h2,h3,h4,h5 {
+  text-align: left;
 }
 #home-jumbotron {
   background-color: inherit;
@@ -67,7 +71,7 @@
 pre {
   background-color: #f5f5f5;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 12px;
   padding: 16px;
 }
 pre code {
@@ -90,6 +94,7 @@ embed,
 video,
 audio {
   max-width: 100%;
+  border-radius: 12px;
 }
 .card-img,
 .card-img-top,
@@ -255,8 +260,14 @@ blockquote cite:before {
   </p>
 
   <p>
+    <a class="btn btn-outline-dark font-125" href="/tags/how-to/">
+      <span class="badge badge-dark">1</span> how-to
+    </a>
+  </p>
+
+  <p>
     <a class="btn btn-outline-dark font-125" href="/tags/internet-technologies/">
-      <span class="badge badge-dark">1</span> internet technologies
+      <span class="badge badge-dark">2</span> internet technologies
     </a>
   </p>
 
@@ -269,6 +280,12 @@ blockquote cite:before {
   <p>
     <a class="btn btn-outline-dark font-125" href="/tags/olympics/">
       <span class="badge badge-dark">1</span> olympics
+    </a>
+  </p>
+
+  <p>
+    <a class="btn btn-outline-dark font-125" href="/tags/programming/">
+      <span class="badge badge-dark">1</span> programming
     </a>
   </p>
 
@@ -299,6 +316,11 @@ blockquote cite:before {
 <script>
   feather.replace()
 </script>
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/magula.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 
 
     
