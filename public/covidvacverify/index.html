@@ -18,7 +18,7 @@
 
   
   
-  <title>Posts | 576i</title>
+  <title>Verify your COVID-19 vaccination pass | 576i</title>
   <style>
 .container {
   max-width: 850px;
@@ -244,13 +244,8 @@ blockquote cite:before {
       <main id="main">
         
 
-<h1>Posts</h1>
+<h1>Verify your COVID-19 vaccination pass</h1>
 
-
-<p>
-  <a class="font-125" href="https://576i.nz/covidvacverify/">Verify your COVID-19 vaccination pass</a>
-  <br>
-  
 
 <i data-feather="calendar"></i> <time datetime="2021-11-13">November 13, 2021</time>
 
@@ -264,109 +259,117 @@ blockquote cite:before {
   <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/internet-technologies">internet technologies</a>
   
 
-</p>
+<br><br>
 
-<p>
-  <a class="font-125" href="https://576i.nz/buildingnotifications/">Building notification functionality into my notes app</a>
-  <br>
-  
+<div id="major">
+    <h3 id="title">Show your QR code to the camera!</h3>
 
-<i data-feather="calendar"></i> <time datetime="2021-11-02">November 2, 2021</time>
+    <video id="preview"></video>
 
-  <br>
-  <i data-feather="tag"></i>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/internet-technologies">internet technologies</a>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/programming">programming</a>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/how-to">how-to</a>
-  
+    <div id="detailsbox">
+        <table id="detailstable">
+            <tbody>
+              <tr>
+                <td><p>Status:</p></td>
+                <td><p id="verifystatus">None yet</p></td>
+              </tr>
+              <tr>
+                <td><p>Name:</p></td>
+                <td><p id="name">N/A</p></td>
+              </tr>
+              <tr>
+                <td><p>Date of Birth:</p></td>
+                <td><p id="dob">N/A</p></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
 
-</p>
+    <p>Credit to <a href="https://pancake.nz/">pancake.nz</a> for underlying API technology.</p>
 
-<p>
-  <a class="font-125" href="https://576i.nz/tokyo/">Tokyo Olympiad: History Never Repeats</a>
-  <br>
-  
+</div>
 
-<i data-feather="calendar"></i> <time datetime="2021-07-13">July 13, 2021</time>
+<style>
+#major {
+  text-align: center;
+}
+#detailsbox {
+  border: black solid 6px;
+  border-radius: 12px;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+#detailstable {
+  margin: auto;
+}
+@media (min-width: 400px) {
+    #detailsbox{
+        width: 370px;
+    }
+}
+#preview {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#title {
+  text-align: center;
+}
+</style>
 
-  <br>
-  <i data-feather="tag"></i>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/film">film</a>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/asian-cinema">asian cinema</a>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/olympics">olympics</a>
-  
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
-</p>
+<script type="text/javascript"> 
 
-<p>
-  <a class="font-125" href="https://576i.nz/ipv6/">Whatever happened to IPv4 extinction?</a>
-  <br>
-  
+    let scanner = new Instascan.Scanner({
+      video: document.getElementById('preview')
+    });
 
-<i data-feather="calendar"></i> <time datetime="2021-04-24">April 24, 2021</time>
+    scanner.addListener('scan', function (content) {
+      console.log(content);
+      fetch("https://api.pancake.nz/verify", {
+          body: JSON.stringify({
+            "payload": content
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST"
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          if (data.verified == true) {
+            setBorderToColour("#34c759")
+            document.getElementById("verifystatus").innerHTML = "Verified!";
+            document.getElementById("name").innerHTML = data.payload.givenName + " " + data.payload.familyName;
+            document.getElementById("dob").innerHTML = data.payload.dob;
+          } else {
+            setBorderToColour("#ff0000")
+            document.getElementById("verifystatus").innerHTML = "Not verified!";
+            document.getElementById("name").innerHTML = "Hidden for privacy reasons.";
+            document.getElementById("dob").innerHTML = "Hidden for privacy reasons.";
+          }
+        })
+    });
 
-  <br>
-  <i data-feather="tag"></i>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/internet-technologies">internet technologies</a>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/situation-report">situation report</a>
-  
+    Instascan.Camera.getCameras().then(function (cameras) {
+      if (cameras.length > 0) {
+        scanner.start(cameras[0]);
+      } else {
+        console.error('No cameras found.');
+      }
+    }).catch(function (e) {
+      console.error(e);
+    });
 
-</p>
+    function setBorderToColour(a) {
+      document.getElementById("preview").style.border = a + " solid 12px";
+      document.getElementById("preview").style.borderRadius = "24px"
+    }
 
-<p>
-  <a class="font-125" href="https://576i.nz/ataxidriver/">2017&#39;s &#39;A Taxi Driver&#39; and it&#39;s historical context</a>
-  <br>
-  
-
-<i data-feather="calendar"></i> <time datetime="2021-03-21">March 21, 2021</time>
-
-  <br>
-  <i data-feather="tag"></i>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/film">film</a>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/asian-cinema">asian cinema</a>
-  
-
-</p>
-
-<p>
-  <a class="font-125" href="https://576i.nz/576i/">WTF is 576i and what does that mean?</a>
-  <br>
-  
-
-<i data-feather="calendar"></i> <time datetime="2020-03-12">March 12, 2020</time>
-
-  <br>
-  <i data-feather="tag"></i>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/retro-tech">retro tech</a>
-  
-  
-  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://576i.nz/tags/meta">meta</a>
-  
-
-</p>
-
+</script>
 
 
       </main>

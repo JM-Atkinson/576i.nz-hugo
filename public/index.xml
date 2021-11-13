@@ -6,7 +6,23 @@
     <description>Recent content in 576i.nz on 576i</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Nov 2021 23:29:49 +1300</lastBuildDate><atom:link href="https://576i.nz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Nov 2021 01:26:38 +1300</lastBuildDate><atom:link href="https://576i.nz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Verify your COVID-19 vaccination pass</title>
+      <link>https://576i.nz/covidvacverify/</link>
+      <pubDate>Sat, 13 Nov 2021 01:26:38 +1300</pubDate>
+      
+      <guid>https://576i.nz/covidvacverify/</guid>
+      <description>Show your QR code to the camera!    Status:
+ None yet
+   Name:
+ N/A
+   Date of Birth:
+ N/A
+     Credit to pancake.nz for underlying API technology.
+  #major { text-align: center; } #detailsbox { border: black solid 6px; border-radius: 12px; padding: 20px; margin: auto; margin-bottom: 20px; } #detailstable { margin: auto; } @media (min-width: 400px) { #detailsbox{ width: 370px; } } #preview { margin: auto; margin-top: 20px; margin-bottom: 20px; } #title { text-align: center; }   let scanner = new Instascan.</description>
+    </item>
+    
     <item>
       <title>Building notification functionality into my notes app</title>
       <link>https://576i.nz/buildingnotifications/</link>

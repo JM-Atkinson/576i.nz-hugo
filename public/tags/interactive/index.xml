@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interactive on 576i</title>
+    <link>https://576i.nz/tags/interactive/</link>
+    <description>Recent content in interactive on 576i</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Nov 2021 01:26:38 +1300</lastBuildDate><atom:link href="https://576i.nz/tags/interactive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Verify your COVID-19 vaccination pass</title>
+      <link>https://576i.nz/covidvacverify/</link>
+      <pubDate>Sat, 13 Nov 2021 01:26:38 +1300</pubDate>
+      
+      <guid>https://576i.nz/covidvacverify/</guid>
+      <description>Show your QR code to the camera!    Status:
+ None yet
+   Name:
+ N/A
+   Date of Birth:
+ N/A
+     Credit to pancake.nz for underlying API technology.
+  #major { text-align: center; } #detailsbox { border: black solid 6px; border-radius: 12px; padding: 20px; margin: auto; margin-bottom: 20px; } #detailstable { margin: auto; } @media (min-width: 400px) { #detailsbox{ width: 370px; } } #preview { margin: auto; margin-top: 20px; margin-bottom: 20px; } #title { text-align: center; }   let scanner = new Instascan.</description>
+    </item>
+    
+  </channel>
+</rss>
