@@ -1,9 +1,8 @@
 ---
 title: 576i.nz
 ---
-<style>h1,h2,h3,h4,h5{text-align: center !important}</style>
 
-Welcome to my wax lyrical about technology, telco products, and other topics.
+Welcome to my wax lyrical about technology, product management, and other topics.
 
 Are you looking for articles? You should check out [Articles](/post). If you want to learn about me, check out [About](/about) or visit my [LinkedIn](https://www.linkedin.com/in/josh-atkinson/).
 

@@ -3,6 +3,7 @@ title: "2017's 'A Taxi Driver' and it's historical context"
 date: 2021-03-21T20:29:17+13:00
 draft: false
 tags: [ "film", "asian cinema" ]
+type: article
 ---
 _This article contains spoilers!_
 
@@ -43,5 +44,3 @@ I don’t have any answers here, and I’ve done zilch academic research into th
 Additionally to note, as at the time of writing, a similar event is ongoing in Myanmar. We’ve had reports of [torture and violence](https://www.rnz.co.nz/news/world/438110/myanmar-protester-describes-torture-we-got-beaten-the-whole-time) strikingly similar to that of the events depicted in A Taxi Driver, and reports of casualty numbers at around 50 or so. This almost certainly is some multiple of this number. This is happening **today**. Don’t just ignore that report, take notice and understand what’s happening, because in all likelihood it’s as bad as or worse than this film depicts.
 
 A Taxi Driver is an incredible film that depicts a hugely important event in South Korean history, and it left me speechless. Give it a watch.
-
-_If you had any comments or feedback, drop me a line at <josh@576i.nz> and I'll include interesting discussions on this page._

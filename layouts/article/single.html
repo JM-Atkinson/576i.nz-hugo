@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+{{ partial "date-and-tags.html" . }}
+<br><br>
+<article>
+    {{ .Content }}
+</article>
+<p><em>If you had any comments or feedback, drop me a line at <a href="mailto:josh@576i.nz">josh@576i.nz</a> and I’ll include interesting discussions on this page.</em></p>
+
+{{ end }}

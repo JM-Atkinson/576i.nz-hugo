@@ -3,6 +3,7 @@ title: "Tokyo Olympiad: History Never Repeats"
 date: 2021-07-13T00:36:31+12:00
 draft: false
 tags: [ "film", "asian cinema", "olympics" ]
+type: article
 ---
 
 ![titlecard](/images/tokyologo.png)

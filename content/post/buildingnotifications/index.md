@@ -3,6 +3,7 @@ title: "Building notification functionality into my notes app"
 date: 2021-11-02T23:29:49+13:00
 draft: false
 tags: [ "internet technologies", "programming", "how-to"]
+type: article
 ---
 
 _Big thanks to_ [_binu.nz_](https://binu.nz)_,_ [_matteas.nz_](https://matteas.nz)_, and_ [_pancake.nz_](https://pancake.nz) _for their help on this project._
@@ -178,10 +179,8 @@ So the final complete Trilium script is:
 
 As you can see, this works beautifully:
 
-![Working](/images/gotify-working.png)
+![Working](gotify-working.png)
 
 And on mobile:
 
-![Phone](/images/gotify-phonenoti.jpg)
-
-_If you had any comments or feedback, drop me a line at_ [_josh@576i.nz_](#root/lqptHG6sN2rj) _and I'll include interesting discussions on this page._
+![Phone](gotify-phonenoti.jpg)

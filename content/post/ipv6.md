@@ -3,6 +3,7 @@ title: "Whatever happened to IPv4 extinction?"
 date: 2021-04-24T20:29:17+13:00
 draft: false
 tags: [ "internet technologies", "situation report" ]
+type: article
 ---
 
 So if you’ve paid any attention to news about the internet in the last thirty years you’ve probably heard that we’re going to imminently run out of IPv4 addresses, like, any day now. Various groups have been saying this since the 90’s, with [RFCs describing the problem](https://tools.ietf.org/html/rfc1338) and everything. So why aren’t single IPv4 addresses the world’s most expensive numbers? Why are us lowly consumers allowed the luxury of having our very own hyper-scarce IPv4 address just for our house!? Let’s take a look.
@@ -79,5 +80,3 @@ If you have the choice to migrate to IPv6, do it. If you can pester your ISP to 
 [An old report of IPv6 progress in NZ](https://www.digital.govt.nz/blog/ipv6-how-are-we-doing/)
 
 [The inspiration for this article and a fantastic analytical look at IPv6 so far](https://labs.apnic.net/?p=1408)
-
-_If you had any comments or feedback, drop me a line at <josh@576i.nz> and I'll include interesting discussions on this page._
