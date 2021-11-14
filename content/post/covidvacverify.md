@@ -44,6 +44,7 @@ tags: [ "interactive", "internet technologies" ]
   padding: 20px;
   margin: auto;
   margin-bottom: 20px;
+  display: none
 }
 #detailstable {
   margin: auto;
@@ -87,11 +88,13 @@ tags: [ "interactive", "internet technologies" ]
           console.log(data)
           if (data.verified == true) {
             setBorderToColour("#34c759")
+            document.getElementById("detailsbox").style.display = "inline-block";
             document.getElementById("verifystatus").innerHTML = "Verified!";
             document.getElementById("name").innerHTML = data.payload.givenName + " " + data.payload.familyName;
             document.getElementById("dob").innerHTML = data.payload.dob;
           } else {
             setBorderToColour("#ff0000")
+            document.getElementById("detailsbox").style.display = "inline-block";
             document.getElementById("verifystatus").innerHTML = "Not verified!";
             document.getElementById("name").innerHTML = "Hidden for privacy reasons.";
             document.getElementById("dob").innerHTML = "Hidden for privacy reasons.";
@@ -107,6 +110,7 @@ tags: [ "interactive", "internet technologies" ]
       }
     }).catch(function (e) {
       console.error(e);
+      alert("There's been an error. You either don't have a camera, or it's not compatible with my site.");
     });
 
     function setBorderToColour(a) {
