@@ -52,6 +52,10 @@ And the result:
 
 We can see on the webclient they've come through:
 
+{{< with .Resources.GetMatch "gotify-testing.png" >}}
+<img src="{{ .RelPermalink }}"></img>
+{{ end }}
+
 ![Testing](/images/gotify-testing.png)
 
 Okay. So we have a working notification server. Now how do we implement this in Trilium?
