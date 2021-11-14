@@ -24,6 +24,7 @@ To achieve this, I need a way of facilitating the notification on a mobile devic
 
 Gotify was trivial to set-up. I used [docker-compose](https://docs.docker.com/compose/) to have a container up and running in about 10 minutes. My config ended up looking like this:
 
+{{< highlight docker >}}
     version: "3"
     
     services:
@@ -37,6 +38,7 @@ Gotify was trivial to set-up. I used [docker-compose](https://docs.docker.com/co
         volumes:
           - "./gotify_data:/app/data"
           - "./config.yml:/etc/gotify/config.yml"
+{{< /highlight >}}
 
 I've added an additional volume where I've overridden the default config.yml. I'll explain why later, but take note it was important for my implementation.
 
@@ -44,19 +46,20 @@ Some additional configuration was required to allow websocket requests through m
 
 So now we have Gotify up and running, let's test it. An easy first test can be achieved with curl:
 
+{{< highlight shell>}}
     josh@SATURNV-NT:~> curl "https://push.576i.nz/message?token=AHu8O88QRGLNaG0" -F "title=test 123" -F "message=holy guac it works" -F "priority=5"
+{{< /highlight >}}
+
 
 And the result:
 
+{{< highlight json>}}
     {"id":2,"appid":1,"message":"holy guac it works","title":"test 123","priority":5,"date":"2021-10-30T05:32:09.401684375Z"}
+{{< /highlight >}}
 
 We can see on the webclient they've come through:
 
-{{< with .Resources.GetMatch "gotify-testing.png" >}}
-<img src="{{ .RelPermalink }}"></img>
-{{ end }}
-
-![Testing](/images/gotify-testing.png)
+![Testing](gotify-testing.png)
 
 Okay. So we have a working notification server. Now how do we implement this in Trilium?
 
@@ -68,6 +71,7 @@ Trilium, as a modern Electron webapp, is made up of two separate halves, the fro
 
 Naively, I started by writing the script externally in VSCode, testing in browser. Gotify's example script uses Axios, a library used for HTTP operations. I had difficulty getting it to work successfully, so I consulted the experts, who advised me to use [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). Fetch is a native browser-based HTTP library, and with some tinkering, we got the following going:
 
+{{< highlight javascript >}}
     const url = "https://push.576i.nz/message?token=AHu8O88QRGLNaG0";
     
     let bodyFormData = new FormData();
@@ -83,14 +87,17 @@ Naively, I started by writing the script externally in VSCode, testing in browse
       },
       body: bodyFormData
     });
+{{< /highlight >}}
 
 To get to this point, we had to wrestle with several speed bumps. You may recall I had overridden the default config for Gotify in my docker-compose.yml.
 
 The reason for this is so that I could add a CORS header to all requests. The scope of this article doesn't expand to CORS. but essentially the main thing that you need to know is that it's a security check based on domains. Gotify's Docker image has a number of environment variables that allow you to configure these headers, but the '\*' required for any origin is incompatible with the yaml globbing in docker-compose. I circumvented this by simply storing the default config locally and then importing it into Docker as a volume, which allows me to specify this line in the configuration:
 
+{{< highlight yaml>}}
     responseheaders: # response headers are added to every response (default: none)
     #    X-Custom-Header: "custom value"
         Access-Control-Allow-Origin: "*"
+{{< /highlight >}}
 
 This resolves the CORS issues.
 
@@ -106,6 +113,7 @@ Luckily, the Trilium backend implements Axios! This is only slightly annoying, b
 
 I rewrote the fetch request in Axois, based on the supplied example from Gotify:
 
+{{< highlight javascript>}}
     const axios = require("axios");
         
         const url = "https://push.576i.nz/message?token=AHu8O88QRGLNaG0";
@@ -123,6 +131,7 @@ I rewrote the fetch request in Axois, based on the supplied example from Gotify:
           url: url,
           data: bodyFormData
         }
+{{< /highlight >}}
 
 This was then added to a larger script that call's Trilium's API, following simple logic:
 
@@ -133,6 +142,7 @@ This was then added to a larger script that call's Trilium's API, following simp
 
 So the final complete Trilium script is:
 
+{{< highlight javascript>}}
     // Get current date and format it using the ISO standard
     let today = new Date();
     let isotoday = today.toISOString();
@@ -164,6 +174,7 @@ So the final complete Trilium script is:
           data: bodyFormData
         })
     };
+{{< /highlight >}}
 
 As you can see, this works beautifully:
 
