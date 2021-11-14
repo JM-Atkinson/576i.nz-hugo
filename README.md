@@ -12,9 +12,9 @@ openSUSE:
 macOS Homebrew:
 `brew install hugo`
 
-Or simply replace your OS's package manager of choice.
+Or [https://gohugo.io/getting-started/installing/](many other ways to get Hugo).
 
-Then clone repo. This repo contains submodules, so your command would be:
+Then clone the repo. This repo contains submodules, so your command would be:
 `git clone --recurse-submodules https://github.com/JM-Atkinson/576i.nz-hugo.git`
 
 In the root directory of the repo, run `hugo -D server` to do interactive development.

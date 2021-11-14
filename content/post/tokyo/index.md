@@ -6,7 +6,7 @@ tags: [ "film", "asian cinema", "olympics" ]
 type: article
 ---
 
-![titlecard](/images/tokyologo.png)
+![titlecard](tokyologo.png)
 
 I write this on the 11th of July 2021, twelve days to the commencement of the 2020 Summer Olympics[^1], officially *Games of the XXXII Olympiad (第32回オリンピック競技大会)*. These Olympics are poised to be symbolically important for the world, as they take place on the recovery path for the COVID-19 pandemic, which has had the world in it's grips since early 2020. Of course, COVID-19 is the reason the 2020 Olympics are taking place in 2021.
 
@@ -20,7 +20,7 @@ Following the end of World War II, Japan; and especially Tokyo were in a positio
 
 This began a slow rebuild and reconstruction of daily life for many citizens of Japan. Previously disallowed to host the Olympics immediately preceding World War II as a sanction for invading China, Japan's renewed global image as a unassuming peaceful nation could be marketed for the first time when offered the opportunity to host the 1964 Summer Olympics by the IOC.
 
-![stadium](/images/stadium.jpg)
+![stadium](stadium.jpg)
 
 The Japanese government truly bought into this scheme of using the Olympics as their first shot of re-entering the global stage. They commenced huge public works programs to construct the required stadiums, facilities, and transport infrastructure to get people there. The Shinkansen, specifically the zero or 'sen' series which gave it it's western name bullet train; ran it's first service nine days prior to the start of the Olympics on 1st October 1964[^3]. Among many constructions were the National Stadium, rebuilt for 2020; and the National Gymnasium, which will be used in it's then existing format in 2020. So much reconstruction work took place, it influenced a series of semi-anti-redevelopment artworks including the Studio Ghibli film *From Up on Poppy Hill* - which presents a story of some teenagers trying to save their old school hall from destruction in the face of the Olympics development committee. Come the second half of 1964, much of Tokyo had had some sort of adjustment.
 
@@ -34,7 +34,7 @@ Almost every Olympic games has been recorded in some format since some of the fi
 
 It appears to be a tradition to make a movie out of footage taken at each Olympic games. The organisers of this event wished to hire Akira Kurosawa, the greatest Japanese director at the time (and still today), but known for his incredible control, fired him when he insisted that he be given creative control over the entire opening and closing ceremonies *in addition* to creative control of making the film. With little time to go, they found a director by the name of Kon Ichikawa. Kon, who had a reputation for being able to come in at last minute and make something of it, was hired to shoot the film, and by golly did he do just that.
 
-![Tokyo Olympiad](/images/titlecard.jpg)
+![Tokyo Olympiad](titlecard.jpg)
 
 Kon Ichikawa's *Tokyo Olympiad* is a whopping 2 hours and 50 minutes long, and is a sporadic beast of telephoto slow-mo mastery, artistic emotional stories of victory, defeat and pain at the 1964 Olympics. Called by many the best sport documentary ever made, this film showcases what Kon saw at the Olympics, but doesn't do it in the typical glory focus on national athletes like they often do. This film has no bias on who or what is included, and all of it is interesting to watch. Ichikawa created a film which shows the Olympics in it's all - the occasional triumph, and the occasional injury w/ ambulances.
 
@@ -50,7 +50,7 @@ Scenes like the 100 meter sprints are turned into intimate emotional affairs, wi
 
 Technically speaking, the film is beautiful. Shot entirely in CinemaScope (ever so slightly wider than modern 21:9) and using state-of-the-art telephoto lenses, the visual presentation of this film is hugely cinematic feels expansive. The marathon in particular with it's epic helicopter fly-overs and wide angle whole street shots is something to behold, and a single shot under a rail-bridge complete with train running over top really shows me more than anything else this is a 'new Japan'.
 
-![Train Bridge](/images/trainbridge.jpg)
+![Train Bridge](trainbridge.jpg)
 
 A scene with a running race somehow punches in on a single runners eyes and tracks them for a huge amount of time, with incredible accuracy, assuming the camera operator was some several hundred meters away equipped with a stupidly large zoom lens. The filmstock used gives the event a certain pastely colour pallet, firmly placing it's aesthetics right in it's day.
 
@@ -64,7 +64,7 @@ I wonder if the film made for this Olmypics will be anything like what Ichikawa 
 
 #### Extra for Experts
 
-[James Quandt's enthralling essay on this film](https://www.criterion.com/current/posts/6994-tokyo-olympiad-the-wind-passing-through-the-flagpoles)
+1. [James Quandt's enthralling essay on this film](https://www.criterion.com/current/posts/6994-tokyo-olympiad-the-wind-passing-through-the-flagpoles)
 
 [^1] Despite taking place in 2021, the organisers of this Olympics decided to continue to call it the '2020' Olympics.
 

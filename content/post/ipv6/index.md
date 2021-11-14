@@ -16,7 +16,7 @@ Now an important concept to understand here, is that the thinking for internet a
 
 As such, early internet architecture thinking<sup>1</sup>, was to give every device on the internet their own IP address, so that every single internet device could reach every other. This principle is known as true end-to-end connectivity. Using the phone system as an exemplar, and trying to build your system to be as flexible for any use-case as possible, this makes a lot of sense.
 
-![How the ARPANET designers of old thought the internet would work](/images/oldnet.jpg)
+![How the ARPANET designers of old thought the internet would work](oldnet.jpg)
 Figure 1: How the ARPANET designers of old thought the internet would work
 
 In 1989, Tim Berners-Lee writes the world-changing Hyper-text Transfer Protocol (HTTP), and Hyper-Text Markup Language (HTML) to go along with it. Building on-top of existing internet infrastructure, Hyper-text allows the internet to explode. Coupled with rapidly decreasing costs for hardware, internet access enters the domain of consumers in the mid to late 90’s. Still following this concept of ‘every device gets an IP’, IP address consumption rapidly increases.
@@ -56,7 +56,7 @@ However, what we see today is a client-server based internet. We have lots of co
 
 If you want to host anything, it’s just easier, or perhaps the only option, via a convenient CDN service, such as Amazon’s AWS. At an even higher abstraction level, you can host your site through something like Squarespace or Google Sites. This accelerates this architectural trend. As I mentioned before - these consumers don’t care what their IP address is, so long as they can reach the content. This allows techniques such as CGNAT<sup>3</sup> to reduce IP load on ISPs. What we get here is a resulting architecture where with CGNAT, GeoIP, and NAT load-balancing, you can theoretically connect up to 4.29 billion devices to 65 thousand unique services, local to them, with just _two_ actual publicly routable IPv4 addresses.
 
-![A snapshot of what the internet mostly looks like today](/images/newnet.jpg)
+![A snapshot of what the internet mostly looks like today](newnet.jpg)
 Figure 2: A snapshot of what the internet mostly looks like today
 
 If this architectural trend continues, it may be so that we just don’t have a need to change to IPv6, because IPv4 meets the needs of this internet structure, and this would be reflected in our IPv4 marketplace. Geoff Huston, who writes an article for APNIC on this topic, discusses the point that this could be what prevents mainstream adoption of IPv6, as “the technology drivers for IPv6 related to IPv4 address exhaustion are lessening in their criticality, and the service environments that continue to operate in an IPv4-only mode are not suffering an adverse reaction from the market”.
@@ -75,8 +75,6 @@ If you have the choice to migrate to IPv6, do it. If you can pester your ISP to 
 
 ## Resources
 
-[An excellent explanation of NAT](https://www.youtube.com/watch?v=pMdvGmw4kWE)
-
-[An old report of IPv6 progress in NZ](https://www.digital.govt.nz/blog/ipv6-how-are-we-doing/)
-
-[The inspiration for this article and a fantastic analytical look at IPv6 so far](https://labs.apnic.net/?p=1408)
+1. [An excellent explanation of NAT](https://www.youtube.com/watch?v=pMdvGmw4kWE)
+2. [An old report of IPv6 progress in NZ](https://www.digital.govt.nz/blog/ipv6-how-are-we-doing/)
+3. [The inspiration for this article and a fantastic analytical look at IPv6 so far](https://labs.apnic.net/?p=1408)

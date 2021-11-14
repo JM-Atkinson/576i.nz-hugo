@@ -7,7 +7,7 @@ type: article
 ---
 _This article contains spoilers!_
 
-![Camera](/images/taxi1.jpg)
+![Camera](taxi1.jpg)
 
 Amid recent popularity of South Korean cinema in the west, such as the hugely successful Parasite by Bong Joon-ho (which is definitely worth the watch), I wanted to highlight a film much less known in the west - A Taxi Driver / 택시운전사 (2017). Directed by Jang Hoon and written by Eom Yu-na, the film contrary to its cheery poster depicts events in Gwangju, which took place over a week in May of 1980. A Taxi Driver is a brilliant film - intense, deeply moving, and does a great job of weaving several deeply interconnected personal experiences into one cohesive narrative. However, the topic of the film remains interesting in-of itself; for the historical event it depicts has a shockingly poor sense of awareness world-wide. I’m going to take a shot at explaining what’s going on in A Taxi Driver, to hopefully expand the experience for western viewers of this incredible film, and then discuss a little about the film itself and thoughts on it’s relevance today.
 
@@ -27,13 +27,17 @@ What’s important to note here is that we have highly similar political conditi
 
 _If you don’t want the rest of the film spoiled for you, go watch it now! You know enough for a pretty solid understanding of what’s about to happen and why. If you continue to read I assume you’ve either seen it or don’t mind spoilers._
 
-![House](/images/taxi2.jpg)
+![House](taxi2.jpg)
+
+## A Taxi Driver
 
 A Taxi Driver depicts the events of the Gwangju Uprising (or what is probably more appropriately termed a massacre) through the eyes of a Seoul taxi driver, played by the ever incredible Song Kang-ho. Song’s character, Kim, is blissfully unaware of political ongoings in his country and views the protests in his home city of Seoul as ‘university students wasting time instead of studying’. Kim doesn’t question the political environment and justifies this through his experiences working in Saudi Arabia, which he views as a veritable hell compared to his life-style in Korea. As not everything is black and white, Korea experienced enormous economic development under the early years of Chung-hee, and it would be absolutely understandable to believe your situation is much better than elsewhere, especially for someone like Kim who likely gets little exposure to events and political conditions outside Korea. Aside Kim is Thomas Kretschmann’s character, Jürgen, who is a German reporter who has snuck into South Korea upon rumours of increasing conflict. He hopes to document events, and for his actions he becomes a hero of the students and democratic supporters - demonstrating the power of independent press in political struggles.
 
 Tragically, Kim’s illusion is shattered at the experience of the ROKA rapidly increasing their acts of violence to suppress the protestors in the city of Gwangju. These protestors, born of the high population of university students in Gwangju, reached a critical mass that many other areas of Korea never reached, despite protests occurring in other areas of Korea, such as Seoul (as is shown right at the start of the film). This escalated to the point of outright firing live ammunition into crowds of protestors, which some estimates suggest killed potentially **two thousand** or more of mostly university students. This is shockingly extreme. A Taxi Driver never actually mentions how many people died. No doubt enforced by Chung-hee, these events really happened. The official death toll stands at 170 as per the martial law command at the time, but this is clearly disputable.
 
-![Soldier](/images/taxi3.jpg)
+![Soldier](taxi3.jpg)
+
+## Who's heard of this?
 
 This abhorrent use of violent force to suppress democratic movements is sadly not uncommon. This event is strikingly similar to the events at Tiananmen Square, nine years later. What's interesting here is that Tiananmen Square is an event that, at least in my experience, is brought up almost every anniversary. It’s not like we all have a minute of silence, but at least the vast majority of people I talk to actually know what it is. I’ve yet to met another person who actually knows of Gwangju, myself included until I’d seen this film. Many less-biased estimates for the death toll on Tiananmen Square place it at around two to three thousand. Sure this is more, but not significantly. So why is Tiananmen Square so much more widely known in the west?
 
