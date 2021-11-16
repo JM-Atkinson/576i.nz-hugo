@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="35.070301mm"
+   height="35.070301mm"
+   viewBox="0 0 35.0703 35.070301"
+   version="1.1"
+   id="svg340"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="favicon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview342"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="3"
+     fit-margin-left="3"
+     fit-margin-right="3"
+     fit-margin-bottom="3"
+     inkscape:zoom="4.192802"
+     inkscape:cx="44.003986"
+     inkscape:cy="65.70785"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs337">
+    <rect
+       x="265.78891"
+       y="203.72653"
+       width="222.61508"
+       height="168.6478"
+       id="rect1578" />
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Subtractive Chromatic Aberration"
+       inkscape:menu="Optical Defect"
+       inkscape:menu-tooltip="Decompose the object into CMY subtractive chromatic aberration"
+       id="filter10126"
+       x="-0.20559211"
+       y="0"
+       width="1.2055921"
+       height="1">
+      <feOffset
+         dx="-3"
+         dy="0"
+         in="SourceGraphic"
+         result="result1"
+         id="feOffset10110" />
+      <feOffset
+         dx="-6"
+         dy="0"
+         in="SourceGraphic"
+         result="result2"
+         id="feOffset10112" />
+      <feOffset
+         dx="0"
+         dy="0"
+         in="SourceGraphic"
+         result="result3"
+         id="feOffset10114" />
+      <feColorMatrix
+         in="result1"
+         values="1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 "
+         result="result4"
+         id="feColorMatrix10116" />
+      <feColorMatrix
+         in="result2"
+         values="0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 "
+         result="result5"
+         id="feColorMatrix10118" />
+      <feColorMatrix
+         in="result3"
+         values="0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 "
+         result="result6"
+         id="feColorMatrix10120" />
+      <feBlend
+         mode="multiply"
+         in="result4"
+         in2="result5"
+         result="result7"
+         id="feBlend10122" />
+      <feBlend
+         mode="multiply"
+         in="result6"
+         in2="result7"
+         id="feBlend10124" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-68.313955,-60.122852)">
+    <g
+       aria-label="i"
+       transform="matrix(0.3179972,0,0,0.3179972,-6.8219764,-15.677535)"
+       id="text1576"
+       style="font-size:144px;line-height:1.25;font-family:EVA-Matisse_Standard;-inkscape-font-specification:EVA-Matisse_Standard;white-space:pre;shape-inside:url(#rect1578)">
+      <path
+         d="m 275.61706,348.44656 q -1.584,0 -1.584,-1.44 0,-0.864 0.432,-1.152 0.432,-0.288 1.008,-0.432 5.76,-0.576 7.488,-1.872 1.728,-1.44 1.728,-4.464 v -51.12 q 0,-1.44 -0.144,-2.304 -0.144,-0.864 -0.864,-1.296 -0.576,-0.432 -2.16,-0.432 -1.44,-0.144 -4.176,-0.144 -1.872,0 -1.872,-1.872 0,-0.576 0.288,-1.008 0.432,-0.576 1.152,-0.72 7.344,-1.296 14.688,-3.024 7.488,-1.872 14.112,-3.888 h 0.432 q 1.152,0 1.152,1.872 v 63.936 q 0,3.024 1.584,4.464 1.728,1.296 7.488,1.872 0.72,0.144 1.008,0.432 0.432,0.288 0.432,1.152 0,1.44 -1.584,1.44 z m 20.016,-83.808 q -2.592,0 -4.896,-1.008 -2.304,-1.152 -4.032,-3.024 -1.728,-1.872 -2.736,-4.176 -1.008,-2.304 -1.008,-4.896 0,-2.592 1.008,-4.896 1.008,-2.304 2.736,-4.032 1.728,-1.872 4.032,-2.88 2.304,-1.152 4.896,-1.152 2.592,0 4.896,1.152 2.304,1.008 4.032,2.88 1.728,1.728 2.736,4.032 1.008,2.304 1.008,4.896 0,2.592 -1.008,4.896 -1.008,2.304 -2.736,4.176 -1.728,1.872 -4.032,3.024 -2.304,1.008 -4.896,1.008 z"
+         id="path9910"
+         style="filter:url(#filter10126)" />
+    </g>
+  </g>
+</svg>
