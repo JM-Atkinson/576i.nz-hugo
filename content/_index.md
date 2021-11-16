@@ -1,6 +1,9 @@
 ---
-title: 576i.nz
+title:
 ---
+
+<img id="logo" src="576i.svg"></img>
+<style>#logo{margin-bottom: 60px;}</style>
 
 Welcome to my wax lyrical about technology, product management, and other topics.
 

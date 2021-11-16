@@ -9,7 +9,7 @@ tags: [ "interactive", "internet technologies" ]
 <div id="major">
     <h3 id="title">Show your QR code to the camera!</h3>
 
-    <video id="preview"></video>
+    <video id="preview" autoplay="true"></video>
 
     <div id="detailsbox">
         <table id="detailstable">
@@ -64,19 +64,34 @@ tags: [ "interactive", "internet technologies" ]
 }
 </style>
 
-<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+<script src="qr-scanner.umd.min.js"></script>
+<script src="qr-scanner-worker.min.js"></script>
 
 <script type="text/javascript"> 
 
-    let scanner = new Instascan.Scanner({
-      video: document.getElementById('preview')
-    });
+    const videoElem = document.getElementById("preview");
 
-    scanner.addListener('scan', function (content) {
-      console.log(content);
-      fetch("https://api.pancake.nz/verify", {
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: {
+            exact: "environment"
+          }
+        }
+      })
+        .then(function (stream) {
+          videoElem.srcObject = stream;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+      const scanner = new QrScanner(videoElem, msg => {
+        let choice;
+        console.log(msg);
+        fetch("https://api.pancake.nz/verify", {
           body: JSON.stringify({
-            "payload": content
+            "payload": msg
           }),
           headers: {
             "Content-Type": "application/json",
@@ -100,18 +115,9 @@ tags: [ "interactive", "internet technologies" ]
             document.getElementById("dob").innerHTML = "Hidden for privacy reasons.";
           }
         })
-    });
-
-    Instascan.Camera.getCameras().then(function (cameras) {
-      if (cameras.length > 0) {
-        scanner.start(cameras[0]);
-      } else {
-        console.error('No cameras found.');
-      }
-    }).catch(function (e) {
-      console.error(e);
-      alert("There's been an error. You either don't have a camera, or it's not compatible with my site.");
-    });
+      });
+      scanner.start();
+    }
 
     function setBorderToColour(a) {
       document.getElementById("preview").style.border = a + " solid 12px";

@@ -2,7 +2,7 @@
 title: "A few themes in the world of the Cloud"
 date: 2021-11-16T13:59:22+13:00
 type: article
-draft: true
+draft: false
 tags: [ "internet technologies", "situation report", "product management" ]
 ---
 

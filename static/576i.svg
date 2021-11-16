@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="304.44983mm"
+   height="109.31979mm"
+   viewBox="0 0 304.44983 109.31979"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="576i.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="3"
+     fit-margin-left="3"
+     fit-margin-right="3"
+     fit-margin-bottom="3"
+     lock-margins="true"
+     inkscape:zoom="0.74118967"
+     inkscape:cx="592.96563"
+     inkscape:cy="216.54376"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="26.983646"
+       y="72.855843"
+       width="1191.328"
+       height="630.06818"
+       id="rect50009" />
+    <rect
+       x="-615.22711"
+       y="1689.1763"
+       width="161.90189"
+       height="53.967293"
+       id="rect46535" />
+    <rect
+       x="-634.11566"
+       y="97.141129"
+       width="1586.6384"
+       height="882.36523"
+       id="rect18969" />
+    <rect
+       x="-677.28949"
+       y="87.696854"
+       width="1109.028"
+       height="774.43066"
+       id="rect14981" />
+    <rect
+       x="-554.51392"
+       y="145.71169"
+       width="997.04572"
+       height="565.30737"
+       id="rect1815" />
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Subtractive Chromatic Aberration"
+       inkscape:menu="Optical Defect"
+       inkscape:menu-tooltip="Decompose the object into CMY subtractive chromatic aberration"
+       id="filter278"
+       x="-0.017730505"
+       y="0"
+       width="1.0230497"
+       height="1">
+      <feOffset
+         dx="-6"
+         dy="0"
+         in="SourceGraphic"
+         result="result1"
+         id="feOffset262" />
+      <feOffset
+         dx="-14"
+         dy="0"
+         in="SourceGraphic"
+         result="result2"
+         id="feOffset264" />
+      <feOffset
+         dx="6"
+         dy="0"
+         in="SourceGraphic"
+         result="result3"
+         id="feOffset266" />
+      <feColorMatrix
+         in="result1"
+         values="1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 "
+         result="result4"
+         id="feColorMatrix268" />
+      <feColorMatrix
+         in="result2"
+         values="0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 "
+         result="result5"
+         id="feColorMatrix270" />
+      <feColorMatrix
+         in="result3"
+         values="0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 "
+         result="result6"
+         id="feColorMatrix272" />
+      <feBlend
+         mode="multiply"
+         in="result4"
+         in2="result5"
+         result="result7"
+         id="feBlend274" />
+      <feBlend
+         mode="multiply"
+         in="result6"
+         in2="result7"
+         id="feBlend276" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(42.459663,-23.302944)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text1813"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10000px;line-height:1.25;font-family:EVA-Matisse_Classic;-inkscape-font-specification:EVA-Matisse_Classic;white-space:pre;shape-inside:url(#rect1815);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="-554.51367"
+         y="10761.02"
+         id="tspan331"><tspan
+           dx="0 132.79991 132.79991 132.7999"
+           style="font-size:200px"
+           id="tspan329">576i</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text14979"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect14981);fill:#000000;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text18967"
+       style="font-style:normal;font-weight:normal;font-size:700px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18969);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="-634.11523"
+         y="1683.0059"
+         id="tspan335"><tspan
+           dx="0 464.79968 464.79968 464.79968"
+           style="font-family:EVA-Matisse_Classic;-inkscape-font-specification:EVA-Matisse_Classic"
+           id="tspan333">576i</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text46533"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect46535);fill:#000000;fill-opacity:1;stroke:none" />
+    <g
+       aria-label="576i"
+       transform="matrix(0.26458333,0,0,0.26458333,-55.330529,-24.987981)"
+       id="text50007"
+       style="font-size:500px;line-height:1.25;font-family:EVA-Matisse_Standard;-inkscape-font-specification:EVA-Matisse_Standard;white-space:pre;shape-inside:url(#rect50009);filter:url(#filter278)">
+      <path
+         d="m 114.98438,267.35547 -12,99 v 1.5 q 0,3 2,3 1,0 3,-1.5 13,-12 34.99999,-19 22.5,-7.5 51.5,-7.5 30,0 55,8 25.5,8 43.5,23 18.00001,15 28,36.5 10,21.5 10,49 0,28 -9.5,51 -8.99999,23 -27,39.5 -18,16.5 -44.5,25.5 -26.5,9 -61,9 -33.5,0 -58,-7.5 -24.49999,-7 -40.499995,-18.5 -15.5,-11.5 -23,-26 -7.5,-14.5 -7.5,-29.5 0,-14 7.5,-25.5 8,-12 24,-12 16.500005,0 24.000005,7 8,7 12,17.5 4.49999,10.5 6.49999,22.5 2.5,12 8,22.5 5.5,10.5 16,17.5 10.50001,7 31,7 25.5,0 43.50001,-21 18.49999,-21 18.49999,-61.5 0,-24.5 -6.5,-44 -6.5,-19.5 -18,-33 -11,-13.5 -25.99999,-20.5 -14.50001,-7.5 -30.5,-7.5 -13.50001,0 -24.50001,2 -11,2 -19.99999,6 -9,4 -17,10 -8,6 -16.000005,14.5 -6.5,6.5 -12,6.5 -2,0 -4.5,-1.5 -3.5,-2 -3.5,-7 0,-2.5 0.5,-4.5 0.5,-2 0.5,-4.5 l 21,-187.5 q 0.5,-2 1.5,-2.5 1,-0.5 5.000005,-0.5 h 169.99999 q 7,0 14.5,-1 7.5,-1 10.5,-3 1.5,-1 4.5,-2 4,-1.5 6,-1.5 3.00001,0 3.00001,3.5 0,1 -1.00001,6 -1,5 -2.5,12.5 -1.5,7 -3.5,15.5 -2,8 -4,16.5 -1.5,8 -2.5,14 -0.5,4 -3.5,4 z"
+         id="path154" />
+      <path
+         d="m 496.48416,268.85547 q -15.5,0 -28.5,1.5 -12.5,1.5 -23,6 -10.5,4 -19.5,12 -8.5,7.5 -15.5,19.5 -1,2 -2,3 -1,1 -3.5,1 -1.5,0 -3,-0.5 -4,-0.5 -4,-3.5 0,-1.5 0.5,-2 6.5,-27 10,-53 4,-26 6,-42 1,-4.5 2,-6 1,-2 5,-2 h 244 q 10,0 10,3.5 0,2 -5.5,10 -29,39.5 -50.5,77.5 -21.5,38 -36.5,78 -15,40 -23.5,84 -8.5,43.5 -12.5,94 -0.5,5.5 -3.5,12 -3,6 -9.5,11 -6,5 -16,8 -10,3.5 -24,3.5 -18,0 -26.5,-9.5 -8,-10 -8,-21.5 0,-1.5 0,-3 0,-2 0.5,-3.5 9,-42 23.5,-81.5 15,-40 34,-75.5 19,-36 41,-66.5 22,-30.5 45.5,-54.5 z"
+         id="path156" />
+      <path
+         d="m 870.98395,557.85547 q 50,0 50,-88.5 0,-22.5 -5,-39.5 -5,-17 -13,-28 -8,-11.5 -18.5,-17 -10,-6 -20.5,-6 -12.5,0 -23.5,6 -10.5,5.5 -18.5,15.5 -7.5,10 -12,23.5 -4,13.5 -4,29.5 0,27 5.5,47 5.5,19.5 14.5,32.5 9.5,12.5 21,19 12,6 24,6 z m -71,-174 q 7,-10 17,-17 10.5,-7.5 22,-12 12,-4.5 24.5,-6.5 12.5,-2.5 23.5,-2.5 51,0 81,31 30,30.5 30,88.5 0,25.5 -9,47.5 -8.5,22 -25,38 -16,15.5 -39.5,24.5 -23.5,9 -53,9 -35,0 -62.5,-11 -27.5,-11 -47,-33.5 -19,-22.5 -29.5,-57 -10,-34.5 -10,-81.5 0,-99.5 38.5,-153.5 38.5,-54 114,-54 28,0 49,7.5 21.5,7.5 36,19.5 15,12 22.5,27 7.5,14.5 7.5,29 0,14.5 -8,23.5 -7.5,8.5 -23.5,8.5 -14,0 -21.5,-6.5 -7.5,-6.5 -12.5,-16.5 -4.5,-10 -7.5,-21 -3,-11.5 -8.5,-21.5 -5,-10 -14,-16.5 -8.5,-6.5 -24.5,-6.5 -32.5,0 -51.5,37 -18.5,36.5 -18.5,115 z"
+         id="path158" />
+      <path
+         d="m 1041.4838,575.35547 q -5.5,0 -5.5,-5 0,-3 1.5,-4 1.5,-1 3.5,-1.5 20,-2 26,-6.5 6,-5 6,-15.5 v -177.5 q 0,-5 -0.5,-8 -0.5,-3 -3,-4.5 -2,-1.5 -7.5,-1.5 -5,-0.5 -14.5,-0.5 -6.5,0 -6.5,-6.5 0,-2 1,-3.5 1.5,-2 4,-2.5 25.5,-4.5 51,-10.5 26,-6.5 49,-13.5 h 1.5 q 4,0 4,6.5 v 222 q 0,10.5 5.5,15.5 6,4.5 26,6.5 2.5,0.5 3.5,1.5 1.5,1 1.5,4 0,5 -5.5,5 z m 69.5,-291 q -9,0 -17,-3.5 -8,-4 -14,-10.5 -6,-6.5 -9.5,-14.5 -3.5,-8 -3.5,-17 0,-9 3.5,-17 3.5,-8 9.5,-14 6,-6.5 14,-10 8,-4 17,-4 9,0 17,4 8,3.5 14,10 6,6 9.5,14 3.5,8 3.5,17 0,9 -3.5,17 -3.5,8 -9.5,14.5 -6,6.5 -14,10.5 -8,3.5 -17,3.5 z"
+         id="path160" />
+    </g>
+  </g>
+</svg>
