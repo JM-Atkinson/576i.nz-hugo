@@ -16,14 +16,13 @@ Now an important concept to understand here, is that the thinking for internet a
 
 As such, early internet architecture thinking<sup>1</sup>, was to give every device on the internet their own IP address, so that every single internet device could reach every other. This principle is known as true end-to-end connectivity. Using the phone system as an exemplar, and trying to build your system to be as flexible for any use-case as possible, this makes a lot of sense.
 
-![How the ARPANET designers of old thought the internet would work](oldnet.jpg)
-Figure 1: How the ARPANET designers of old thought the internet would work
+{{< figure src="oldnet.jpg" caption="Figure 1: How the ARPANET designers of old thought the internet would work" attr="" attrlink="" >}}
 
 In 1989, Tim Berners-Lee writes the world-changing Hyper-text Transfer Protocol (HTTP), and Hyper-Text Markup Language (HTML) to go along with it. Building on-top of existing internet infrastructure, Hyper-text allows the internet to explode. Coupled with rapidly decreasing costs for hardware, internet access enters the domain of consumers in the mid to late 90’s. Still following this concept of ‘every device gets an IP’, IP address consumption rapidly increases.
 
 In January of 2011, IANA gave out the last /8. It depends on how you draw the lines, but technically speaking this meant every last bit of IPv4 address space that wasn’t reserved had been given out to the various local number authorities. Subsequently, these number authorities began to run out of what _they_ had, and this resulted in [news story after news story](https://www.theregister.com/2019/11/25/ipv4_addresses_gone/) of “then end of IPv4”, which never actually eventuated. That’s not quite true to say - the problems are there, but the fires are rapidly being put out.
 
-![A timeline of IPv4 Exhuastion](https://upload.wikimedia.org/wikipedia/commons/3/35/IPv4_exhaustion_time_line-en.svg)
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/3/35/IPv4_exhaustion_time_line-en.svg" caption="A timeline of IPv4 Exhuastion." attr="Michel Bakni - CC-BY-SA-4.0" attrlink="https://www.wikidata.org/wiki/Q81411358" >}}
 
 By as early as 1992, long before we actually ‘ran out’, the alarm bells were ringing, and those helping to set internet standards needed to find solutions. Thus enters the primary solution, **Network Address Translation, or NAT for short.**
 
@@ -56,14 +55,13 @@ However, what we see today is a client-server based internet. We have lots of co
 
 If you want to host anything, it’s just easier, or perhaps the only option, via a convenient CDN service, such as Amazon’s AWS. At an even higher abstraction level, you can host your site through something like Squarespace or Google Sites. This accelerates this architectural trend. As I mentioned before - these consumers don’t care what their IP address is, so long as they can reach the content. This allows techniques such as CGNAT<sup>3</sup> to reduce IP load on ISPs. What we get here is a resulting architecture where with CGNAT, GeoIP, and NAT load-balancing, you can theoretically connect up to 4.29 billion devices to 65 thousand unique services, local to them, with just _two_ actual publicly routable IPv4 addresses.
 
-![A snapshot of what the internet mostly looks like today](newnet.jpg)
-Figure 2: A snapshot of what the internet mostly looks like today
+{{< figure src="newnet.jpg" caption="Figure 2: A snapshot of what the internet mostly looks like today" attr="" attrlink="" >}}
 
 If this architectural trend continues, it may be so that we just don’t have a need to change to IPv6, because IPv4 meets the needs of this internet structure, and this would be reflected in our IPv4 marketplace. Geoff Huston, who writes an article for APNIC on this topic, discusses the point that this could be what prevents mainstream adoption of IPv6, as “the technology drivers for IPv6 related to IPv4 address exhaustion are lessening in their criticality, and the service environments that continue to operate in an IPv4-only mode are not suffering an adverse reaction from the market”.
 
 Personally, I think this would be a great tragedy. IPv6 is just such a forward thinking protocol, and would, if you wanted to, re-enable this concept of E2E connectivity for the internet, especially for enthusiasts such as myself who could easily afford more public IPs than I could ever hope to use. Additionally, this trend of a CDN-based internet structure poses a risk in centralization. Yes, there are benefits to centralization, this has enormously contributed to stable web experiences, and dramatically reduces security risks when Amazon needs to be absolutely on the ball to be trustworthy. _But_, what happens if AWS goes down, [when such an enormous amount of the internet’s services rely on it](https://www.theverge.com/2020/11/25/21719396/amazon-web-services-aws-outage-down-internet), even if the webservers themselves aren’t entirely within AWS. Azure, Akamai, Cloudflare, etc. are enormous organizations that are a large part of the backbone of the internet volume-wise, but they aren't immune to terroisim, hacking, or the law. The more we pile on to these centralized locations, it means that when (not if) they do go down in a really big way we’ll see catastrophic levels of general failure. These things often go in cycles, so we may in fact soon return to decentralization to, among other things, reduce cost as CDN providers raise fees. When that happens, we want to be well and truly on IPv6.
 
-![The problem with centralization and dependency chains](https://imgs.xkcd.com/comics/dependency.png)
+{{< figure src="https://imgs.xkcd.com/comics/dependency.png" caption="" attr="XKCD" attrlink="https://xkcd.com/" >}}
 
 If you have the choice to migrate to IPv6, do it. If you can pester your ISP to bring IPv6 support, do it. If you work in an ISP, and make decisions about whether to implement IPv6, **please do it**. We really need to get there, and at this stage, it’s looking a little too close for comfort.
 
