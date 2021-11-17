@@ -4,6 +4,8 @@ date: 2021-11-13T01:26:38+13:00
 draft: false
 markup: html
 tags: [ "interactive", "internet technologies" ]
+url: /verify/
+aliases: [ "/2021/11/verify-your-covid-19-vaccination-pass/" ]
 ---
 
 <div id="major">
@@ -31,6 +33,8 @@ tags: [ "interactive", "internet technologies" ]
     </div>
 
     <p>Credit to <a href="https://pancake.nz/">pancake.nz</a> for underlying API technology.</p>
+
+    <p><b>Your privacy:</b> Scan results never touch my server, they travel securely from your browser direct to the API.</p>
 
 </div>
 
@@ -102,26 +106,40 @@ tags: [ "interactive", "internet technologies" ]
         .then(data => {
           console.log(data)
           if (data.verified == true) {
-            setBorderToColour("#34c759")
-            document.getElementById("detailsbox").style.display = "inline-block";
-            document.getElementById("verifystatus").innerHTML = "Verified!";
-            document.getElementById("name").innerHTML = data.payload.givenName + " " + data.payload.familyName;
-            document.getElementById("dob").innerHTML = data.payload.dob;
+            setBorderToColour("#34c759", "preview")
+            setBorderToColour("#34c759", "preview")
+            displayResultCard("Verified!", data.payload.givenName + " " + data.payload.familyName, data.payload.dob)
+          } else if (data.verified == false && data.error == "Expiry date is in the past" ) {
+            setBorderToColour("#ff0000", "preview")
+            setBorderToColour("#ff0000", "detailsbox")
+            displayResultCard("Your pass is expired.", "N/A", "N/A")
+          } else if (data.verified == false && data.error == "Not before date is in the future" ) {
+            setBorderToColour("#ff0000", "preview")
+            setBorderToColour("#ff0000", "detailsbox")
+            displayResultCard("Your pass isn't valid yet.", "N/A", "N/A")
           } else {
-            setBorderToColour("#ff0000")
-            document.getElementById("detailsbox").style.display = "inline-block";
-            document.getElementById("verifystatus").innerHTML = "Not verified!";
-            document.getElementById("name").innerHTML = "Hidden for privacy reasons.";
-            document.getElementById("dob").innerHTML = "Hidden for privacy reasons.";
+            setBorderToColour("#ff0000", "preview")
+            setBorderToColour("#ff0000", "detailsbox")
+            displayResultCard("There was an error decoding your pass.", "N/A", "N/A")
           }
         })
       });
       scanner.start();
+    } else {
+      document.getElementById("title").innerText = "It looks like you don't have a camera!"
+      document.getElementById("title").style.color = "#ff0000"
     }
 
-    function setBorderToColour(a) {
-      document.getElementById("preview").style.border = a + " solid 12px";
-      document.getElementById("preview").style.borderRadius = "24px"
+    function setBorderToColour(a, b) {
+      document.getElementById(b).style.border = a + " solid 12px";
+      document.getElementById(b).style.borderRadius = "24px"
+    }
+
+    function displayResultCard(a, b, c) {
+      document.getElementById("detailsbox").style.display = "inline-block";
+      document.getElementById("verifystatus").innerHTML = a;
+      document.getElementById("name").innerHTML = b;
+      document.getElementById("dob").innerHTML = c;
     }
 
 </script>
