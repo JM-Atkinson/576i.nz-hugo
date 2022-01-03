@@ -53,7 +53,7 @@ params:
   containerMaxWidth: 850px
   dateFormat: January 2, 2006
 #  homeText: Welcome to the Vanilla theme demo. Have a look around. Maybe even eat some ice cream. NOTE: This is now fufilled via _index.md in /content
-  footerText: "[About](/about) • [Disclaimers](/disclaimers) • [License](https://creativecommons.org/licenses/by-sa/4.0/) | Copyright © Josh Atkinson MMXXI"
+  footerText: "[About](/about) • [Disclaimers](/disclaimers) • [License](https://creativecommons.org/licenses/by-sa/4.0/) | Copyright © Josh Atkinson MMXXII"
   hideFooter: false
   katex: true
 
