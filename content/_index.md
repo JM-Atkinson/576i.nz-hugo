@@ -51,41 +51,41 @@ Are you looking for articles? You should check out [Articles](/post). If you wan
 #### Friends of 576i.nz
 <div class="card-group">
   <div class="card-column">
-    <a href="https://576i.nz" target="_blank" rel="noreferrer">
+    <a href="https://binu.nz" target="_blank" rel="noreferrer">
       <div class="card">
         <img src="globe.svg" alt="576i" class="card-image">
         <div class="description">
-          <h4><b>576i.nz</b></h4> 
+          <h4><b>binu.nz</b></h4> 
           <p>Tech hobbyist and XML elitist</p> 
         </div>
       </div>
     </a>
-    <a href="https://576i.nz" target="_blank" rel="noreferrer">
+    <a href="https://timo.nz" target="_blank" rel="noreferrer">
       <div class="card">
         <img src="globe.svg" alt="576i" class="card-image">
         <div class="description">
-          <h4><b>576i.nz</b></h4> 
-          <p>Tech hobbyist and XML elitist</p> 
+          <h4><b>timo.nz</b></h4> 
+          <p>A guy.</p> 
         </div>
       </div>
     </a>
   </div>
   <div class="card-column">
-    <a href="https://576i.nz" target="_blank" rel="noreferrer">
+    <a href="https://matteas.nz" target="_blank" rel="noreferrer">
       <div class="card">
         <img src="globe.svg" alt="576i" class="card-image">
         <div class="description">
-          <h4><b>576i.nz</b></h4> 
+          <h4><b>matteas.nz</b></h4> 
           <p>Tech hobbyist and XML elitist</p> 
         </div>
       </div>
     </a>
-    <a href="https://576i.nz" target="_blank" rel="noreferrer">
+    <a href="https://pancake.nz" target="_blank" rel="noreferrer">
       <div class="card">
         <img src="globe.svg" alt="576i" class="card-image">
         <div class="description">
-          <h4><b>576i.nz</b></h4> 
-          <p>Tech hobbyist and XML elitist</p> 
+          <h4><b>pancake.nz</b></h4> 
+          <p>Tasty.</p> 
         </div>
       </div>
     </a>
