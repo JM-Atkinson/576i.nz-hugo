@@ -5,8 +5,11 @@ draft: false
 markup: html
 tags: [ "interactive", "film", "history" ]
 ---
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
 
-<div class="custom">
+{{/*  <div class="custom">
     <div class="outflex">
         <div class="rowflex">
             <div class="titleyear">
@@ -19,7 +22,9 @@ tags: [ "interactive", "film", "history" ]
             <img class="poster" id="poster" src="" alt="">
         </div>
     </div>
-</div>
+</div>  */}}
+
+<div id="map"></div>
 
 <style>
     .custom .outflex {
@@ -38,32 +43,94 @@ tags: [ "interactive", "film", "history" ]
         justify-content: flex-start;
         align-items: baseline;
     }
-    .title {
+    .custom .title {
         font-size: 150%;
         font-weight: bold;
         margin-right: 10px;
     }
-    </style>
+    
+    #map { height: 600px; }
+
+</style>
+
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
 
 <script>
-    let id = "1892"
+    
+    // MAP SETUP
+    var map = L.map('map').setView([0, 0], 1);
 
-    fetch("https://api.themoviedb.org/3/movie/" + id + "?api_key=7baf9dd01abb6752b69e0cbf77fd9b21&append_to_response=credits,images", {
-        method: "GET"
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        document.getElementById("title").textContent = data.title
-        document.getElementById("year").textContent = data.release_date.substring(0, 4)
-        document.getElementById("desc").textContent = data.overview
-        var directors = [];
-        data.credits.crew.forEach(function(entry){
-                if (entry.job === 'Director') {
-                    directors.push(entry.name);
-                }
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    }).addTo(map);
+
+    var baseDIV = '<div class="custom" id="baseDIV"></div>'
+    
+    function buildDIV(fetchResult) {
+        let a = document.createElement("p")
+        a.innerHTML = fetchResult.title
+        let b = document.getElementById("baseDIV")
+        b.appendChild(a)
+    }
+
+    function fetchTMDB(tmdbid) {
+        fetch("https://api.themoviedb.org/3/movie/" + tmdbid + "?api_key=7baf9dd01abb6752b69e0cbf77fd9b21&append_to_response=credits", {
+            method: "GET"
+          })
+          .then(response => response.json())
+          .then(data => {
+            buildDIV(data)
+            {{/*  console.log(data)
+            document.getElementById("title").textContent = data.title
+            document.getElementById("year").textContent = data.release_date.substring(0, 4)
+            document.getElementById("desc").textContent = data.overview
+            var directors = [];
+            data.credits.crew.forEach(function(entry){
+                    if (entry.job === 'Director') {
+                        directors.push(entry.name);
+                    }
+                })
+            document.getElementById("director").textContent = directors.join(', ')
+            document.getElementById("poster").src = "https://image.tmdb.org/t/p/w154" + data.poster_path  */}}
             })
-        document.getElementById("director").textContent = directors.join(', ')
-        document.getElementById("poster").src = "https://image.tmdb.org/t/p/w154" + data.poster_path
-        });
+    }
+
+    // POPUP SETUP
+    function populatePopUp(feature, layer) {
+        layer.bindPopup(baseDIV);
+        fetchTMDB(feature.properties.tmdbid) 
+    }
+
+    // GEOJSON SETUP
+
+    var geojsonFeature = {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": {
+                  "tmdbid": 522162,
+                  "name": "Midway"
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    182.61935949325562,
+                    28.201746528611785
+                  ]
+                }
+              }
+            ]
+          }
+    
+    // MAIN ROUTINE
+
+    // Plot GeoJSON objects and bind popups
+    L.geoJSON(geojsonFeature, {onEachFeature: populatePopUp}).addTo(map);
+
+
 </script>
