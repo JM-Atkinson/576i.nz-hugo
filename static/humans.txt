@@ -12,4 +12,5 @@
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    HUGO, Bootstrap
+    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    Nginx configs, Bootstrap
