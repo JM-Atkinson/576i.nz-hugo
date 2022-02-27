@@ -1,0 +1,67 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "tmdbid": 522162,
+          "name": "Midway"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            182.61935949325562,
+            28.201746528611785
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "tmdbid": 10110,
+          "name": "Empire of the Sun"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            121.4857542514801,
+            31.2420586228561
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "marker-color": "#7e7e7e",
+          "marker-size": "medium",
+          "marker-symbol": "",
+          "tmdbid": 378108,
+          "name": "In This Corner of the World"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.5643825531006,
+            34.249465816742145
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "marker-color": "#7e7e7e",
+          "marker-size": "medium",
+          "marker-symbol": "",
+          "tmdbid": 378108,
+          "name": "In This Corner of the World"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            132.45260417461395,
+            34.39646390832678
+          ]
+        }
+      }
+    ]
+  }
