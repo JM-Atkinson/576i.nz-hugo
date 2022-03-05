@@ -1,0 +1,114 @@
+---
+title: "World War II in film (interactive feature)"
+date: 2022-03-05T01:26:38+13:00
+draft: false
+markup: html
+tags: [ "interactive", "film", "history" ]
+aliases: [ "/wwiifilmmap" ]
+---
+
+<div id="map"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+
+<style>
+    .custom .outflex {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .custom .outflex {
+        align-self: flex-end;
+    }
+    .custom .poster {
+        height: 200px;
+        max-width: initial;
+        margin-left: 10px;
+    }
+    .custom .titleyear {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+    .custom .title {
+        font-size: 150%;
+        font-weight: bold;
+        margin-right: 5px;
+    }
+    
+    #map {
+        height: 500px;
+        width: 100%;
+    }
+</style>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+
+<script>
+
+    // This is needed to store the contstructed pop-up div. Do not remove or use elsewhere.
+    var internalDIV
+    
+    // MAP SETUP
+    var map = L.map('map', {fullscreenControl: {pseudoFullscreen: true}}).setView([36, 97], 1.5);
+
+    // ADD OSM LAYER
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    }).addTo(map);
+
+    // Fetches details from TMDB and builds/returns the internalDIV
+    async function fetchTMDB(tmdbid) {
+        await fetch("https://api.themoviedb.org/3/movie/" + tmdbid + "?api_key=7baf9dd01abb6752b69e0cbf77fd9b21&append_to_response=credits", {
+            method: "GET"
+          })
+          .then(response => response.json())
+          .then(data => {
+            var directors = [];
+            data.credits.crew.forEach(function(entry){
+                    if (entry.job === 'Director') {
+                        directors.push(entry.name);
+                    }
+                })
+            internalDIV = '<div class="outflex"><div class="rowflex"><div><span class="title">' + data.title + '</span><span class="year">' + data.release_date.substring(0, 4) + '</span></div><p class="desc">' + data.overview + '</p><span>Directed by: </span><span class="director">' + directors.join(', ') + '</span></div><div class="colflex"><img class="poster" src="https://image.tmdb.org/t/p/w154' + data.poster_path + '" alt=""></div></div></div>'
+            })
+        return internalDIV
+    }
+
+    // POPUP SETUP
+    async function populatePopUp(feature, layer) {
+        let baseDIV = document.createElement("div")
+        baseDIV.classList.add("custom");
+        baseDIV.innerHTML = await fetchTMDB(feature.properties.tmdbid)
+        layer.bindPopup(baseDIV);
+    }
+
+    // GEOJSON FETCH SETUP
+    const getJSON = async url => {
+        const response = await fetch(url);
+        if(!response.ok) // check if response worked (no 404 errors etc...)
+          throw new Error(response.statusText);
+      
+        const data = response.json(); // get JSON from the response
+        return data; // returns a promise, which resolves to this data value
+    }
+
+    // MAIN ROUTINE
+    console.log("Fetching data...");
+    getJSON("movies.geojson").then(data => {
+        // Plot GeoJSON objects and bind popups
+        L.geoJSON(data, {onEachFeature: populatePopUp}).addTo(map);
+    }).catch(error => {
+    console.error(error);
+    });
+
+</script>
