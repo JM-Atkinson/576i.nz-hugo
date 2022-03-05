@@ -32,4 +32,4 @@ Otherwise I have a [GitHub](https://github.com/JM-Atkinson), but I don't use it 
 
 Credit to [Hugo](https://gohugo.io/) & [Vanilla](https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme) for site framework.
 
-Developed with [VSCode](https://code.visualstudio.com/) on [openSUSE](https://www.opensuse.org/) & macOS, hosted on the mighty [Debian](https://www.debian.org/) with [NGINX](https://www.nginx.com/) in Tāmaki Makaurau.
+Developed with [VSCode](https://code.visualstudio.com/) on [openSUSE](https://www.opensuse.org/) & macOS, hosted on [Kubernetes](https://kubernetes.io/) with [NGINX](https://www.nginx.com/) in Aotearoa.

@@ -1,6 +1,6 @@
 ---
 title: "World War II in film"
-date: 2022-02-13T01:26:38+13:00
+date: 2022-03-05T01:26:38+13:00
 type: article
 draft: false
 tags: [ "film", "history" ]
@@ -10,11 +10,11 @@ tags: [ "film", "history" ]
 
 When I think of the genres of film that I consider myself an ‘extra’ fan of, films about war is one of the genres that often comes near the top of the list. War is something that has profound geopolitical, social, and physical ramifications for all involved, and often lasting side effects that will cause sadness and pain for decades to come. The opportunity to watch the stories that come of it, to learn and respect those who went before, is something I value being able to do.
 
-World War II, as the most significant event to happen to society at large perhaps ever, had gigantic geopolitical effects that nearly all conflict in the years since can draw lines to establishing the puzzle pieces. It engulfed smaller (in comparison to the entire globe) regional conflicts such as the Second Sino-Japanese War, fundamentally altering it's course and eventually resulting in the foundation of modern communist China. So many aspects of our world today are directly attributable to the events of World War II.
+World War II, as the most significant event to happen to society at large, perhaps ever, had gigantic geopolitical effects that nearly all conflict in the years since can draw lines to establishing the puzzle pieces. It engulfed smaller (in comparison to the entire globe) regional conflicts such as the Second Sino-Japanese War, fundamentally altering it's course and eventually resulting in the foundation of modern communist China. So many aspects of our world today are directly attributable to the events of World War II.
 
 World War II is not like other conflicts in that the events are easily geographically definable to a specific region. Being the only truly global conflict, events were spread the world over, and as such it can be hard to picture the extent of all involved. However, film is a way to do this, and we see snapshots of particular environments, and the conditions that contended the people there. So much film about World War II has been made, that one can start to build a picture of the entire war if they endeavoured to watch it all. Chances are, if there's a World War II battle you've heard of, there's a film about it.
 
-Several years ago, I thought an exercise could be done then to plot all the films I've seen about World War II on a map, and depict my experience of World War II through film, geographically. Only since I began writing this site, have I gained the skills to make this a reality. So I began a project to product my ‘World War II film map’, and the results are here for you to view.
+Several years ago, I thought an exercise could be done then to plot all the films I've seen about World War II on a map, and depict my experience of World War II through film, geographically. Only since I began writing this site, have I gained the skills to make this a reality. So I began a project to produce my ‘World War II film map’, and the results are here for you to view.
 
 To view the map, you can [**click here**](/wwiifilmmap), or go back to the articles page and choose the interactive version of this post.
 
@@ -24,7 +24,7 @@ To view the map, you can [**click here**](/wwiifilmmap), or go back to the artic
 
 The scope of this map is limited to films & miniseries about World War II, and it's sub-conflicts that happened immediately before and after the main conflict.
 
-Due to practicality, most films depicted have a point placed roughly at the centre of the geographic area they are set, and the specificity of this varies enormously depending on the scope and realism of the film. Sometimes we know even down to the street corner where a scene takes place, sometimes we know little more than a country. When possible I have tried to be as accurate as I can.
+Due to practicality, most films depicted have a point placed roughly at the centre of the geographic area they are set, and the specificity of this varies enormously depending on the scope and realism of the film. Sometimes we know even down to the street corner where a scene takes place, sometimes we know little more than a country. Where possible I have tried to be as accurate as I can.
 
 In scenarios where a film takes place over several locations, I will include multiple points for this film for each location. Again for practicality, I've not included locations that were depicted for less than about 15 minutes of screen runtime, or where there would be many points due to the film being primarily travelling (Saving Private Ryan as an example).
 
@@ -36,7 +36,7 @@ This entire project was surprisingly simple to construct. I've taken advantage o
 
 Firstly, the main map itself is provided by [Leaflet](https://leafletjs.com/), one of the best JS map libraries going. The base layer map is provided by the awesome [OpenStreetMap](https://www.openstreetmap.org/) project (which is free to use!).
 
-To plot the points on the map, I sought out a simple data structure that I could modify using a easy GIS tool to plot my points. I investigated a number of geographical formats, and ways to use them with Leaflet, until I came across [GeoJSON](https://geojson.org/), which is really the hero of the show here. GeoJSON is a standardised JSON formatted way to store geographical objects, like points, polygons, and lines. [Leaflet natively supports GeoJSON](https://leafletjs.com/examples/geojson/), which made this whole exercise as easy is fetching a GeoJSON feature set, and feeding that into Leaflet and an input.
+To plot the points on the map, I sought out a simple data structure that I could modify using a easy GIS tool to plot my points. I investigated a number of geographical formats, and ways to use them with Leaflet, until I came across [GeoJSON](https://geojson.org/), which is really the hero of the show here. GeoJSON is a standardised JSON formatted way to store geographical objects, like points, polygons, and lines. [Leaflet natively supports GeoJSON](https://leafletjs.com/examples/geojson/), which made this whole exercise as easy is fetching a GeoJSON feature set, and feeding that into Leaflet as an input.
 
 I can build my GeoJSON files using anything that produces GeoJSON including most GIS tools, but an easy solution is [geojson.io](http://geojson.io/).
 

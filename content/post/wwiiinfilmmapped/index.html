@@ -1,6 +1,6 @@
 ---
-title: "World War II in film, mapped"
-date: 2022-02-13T01:26:38+13:00
+title: "World War II in film (interactive feature)"
+date: 2022-03-05T01:26:38+13:00
 draft: false
 markup: html
 tags: [ "interactive", "film", "history" ]
@@ -58,7 +58,7 @@ crossorigin=""></script>
     var internalDIV
     
     // MAP SETUP
-    var map = L.map('map', {fullscreenControl: {pseudoFullscreen: true}}).setView([0, 0], 1);
+    var map = L.map('map', {fullscreenControl: {pseudoFullscreen: true}}).setView([36, 97], 1.5);
 
     // ADD OSM LAYER
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -73,7 +73,6 @@ crossorigin=""></script>
           })
           .then(response => response.json())
           .then(data => {
-            console.log(data)
             var directors = [];
             data.credits.crew.forEach(function(entry){
                     if (entry.job === 'Director') {
@@ -101,16 +100,15 @@ crossorigin=""></script>
       
         const data = response.json(); // get JSON from the response
         return data; // returns a promise, which resolves to this data value
-      }
-      
-      // MAIN ROUTINE
-      console.log("Fetching data...");
-      getJSON("movies.geojson").then(data => {
-        console.log(data);
-            // Plot GeoJSON objects and bind popups
-            L.geoJSON(data, {onEachFeature: populatePopUp}).addTo(map);
-      }).catch(error => {
-        console.error(error);
-      });
+    }
+
+    // MAIN ROUTINE
+    console.log("Fetching data...");
+    getJSON("movies.geojson").then(data => {
+        // Plot GeoJSON objects and bind popups
+        L.geoJSON(data, {onEachFeature: populatePopUp}).addTo(map);
+    }).catch(error => {
+    console.error(error);
+    });
 
 </script>
