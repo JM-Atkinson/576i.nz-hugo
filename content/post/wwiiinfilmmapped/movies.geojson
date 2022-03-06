@@ -18,20 +18,6 @@
     {
       "type": "Feature",
       "properties": {
-        "tmdbid": 10110,
-        "name": "Empire of the Sun"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4857542514801,
-          31.2420586228561
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
@@ -553,6 +539,23 @@
         "coordinates": [
           19.947309494018555,
           50.06342036958905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "tmdbid": 10110,
+        "name": "Empire of the Sun"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.52361094951631,
+          31.211888459749947
         ]
       }
     }
