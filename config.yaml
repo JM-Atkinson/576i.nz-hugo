@@ -21,31 +21,27 @@ menu:
   - name: Articles
     pre: edit
     url: /post/
-    weight: 3
+    weight: 2
   - name: Tags
     pre: tag
     url: /tags/
-    weight: 4
-  - name: Verify
-    pre: aperture
-    url: /verify/
-    weight: 2
+    weight: 3
   - name: About
     pre: smile
     url: /about/
-    weight: 5
+    weight: 4
   - name: LinkedIn
     pre: linkedin
     url: https://www.linkedin.com/in/josh-atkinson/
-    weight: 6
+    weight: 5
   - name: GitHub
     pre: github
     url: https://github.com/JM-Atkinson/
+    weight: 6
+  - name: Twitch
+    pre: twitch
+    url: https://www.twitch.tv/576i
     weight: 7
-  # - name: Twitch
-  #   pre: twitch
-  #   url: https://www.twitch.tv/576i
-  #   weight: 7
 
 params:
   includeBootstrapJs: false
