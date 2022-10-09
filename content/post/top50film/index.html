@@ -1,0 +1,102 @@
+---
+title: "My Top 50: Cinema"
+date: 2022-10-09T01:26:38+13:00
+draft: true
+markup: html
+tags: [ "interactive", "film" ]
+aliases: [ "/top50films" ]
+---
+
+<div id="entryList"></div>
+
+<style>
+    #entrylist {
+        display: flex;
+        flex-direction: column;
+    }
+    .custom .outflex {
+        display: flex;
+        flex-flow: row nowrap;
+        align-self: flex-end;
+        background-color: lightgrey;
+        border-radius: 12px;
+    }
+    .custom .colflex {
+        margin-right: 10px;
+    }
+    .custom .rowflex {
+        margin-right: 10px;
+    }
+    .custom .poster {
+        height: 200px;
+        max-width: initial;
+
+    }
+    .custom .titleyear {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+    .custom .title {
+        font-size: 150%;
+        font-weight: bold;
+        margin-right: 5px;
+    }
+</style>
+
+<script>
+
+    // This is needed to store the contstructed pop-up div. Do not remove or use elsewhere.
+    var internalDIV
+
+    // Fetches details from TMDB and builds/returns the internalDIV
+    async function fetchTMDB(tmdbid) {
+        await fetch("https://api.themoviedb.org/3/movie/" + tmdbid + "?api_key=7baf9dd01abb6752b69e0cbf77fd9b21&append_to_response=credits", {
+            method: "GET"
+          })
+          .then(response => response.json())
+          .then(data => {
+            var directors = [];
+            data.credits.crew.forEach(function(entry){
+                    if (entry.job === 'Director') {
+                        directors.push(entry.name);
+                    }
+                })
+            internalDIV = '<div class="outflex"><div class="colflex"><img class="poster" src="https://image.tmdb.org/t/p/w154' + data.poster_path + '" alt=""></div><div class="rowflex"><div><span class="title">' + data.title + '</span><span class="year">' + data.release_date.substring(0, 4) + '</span></div><p class="desc">' + data.overview + '</p><span>Directed by: </span><span class="director">' + directors.join(', ') + '</span></div></div></div>'
+            })
+        return internalDIV
+    }
+
+    // FILM CARD SETUP
+    async function populateFilmCard(entry, parentElement) {
+        let baseDIV = document.createElement("div");
+        baseDIV.classList.add("custom");
+        baseDIV.innerHTML = await fetchTMDB(entry.tmdbid);
+        document.getElementById(parentElement).appendChild(baseDIV);
+    }
+
+    // JSON FETCH SETUP
+    const getJSON = async url => {
+        const response = await fetch(url);
+        if(!response.ok) // check if response worked (no 404 errors etc...)
+          throw new Error(response.statusText);
+      
+        const data = response.json(); // get JSON from the response
+        return data; // returns a promise, which resolves to this data value
+    }
+
+    // MAIN ROUTINE
+    console.log("Fetching data...");
+    getJSON("movies.json").then(data => {
+//        for (let i = 0; i < data.entries.length; i++) {
+//            populateFilmCard(data.entries[i], "entryList")        
+//        }
+        data.entries.map(entry => {
+            populateFilmCard(entry, "entryList")
+        })
+    }).catch(error => {
+    console.error(error);
+    });
+
+</script>
