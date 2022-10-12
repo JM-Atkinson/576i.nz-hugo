@@ -29,47 +29,50 @@ aliases: [ "/top50films" ]
 <div id="entryList"></div>
 
 <style>
+    /* disavble image rounding from sitewide styles */
     img {
         border-radius: 0px !important;
     }
     #entryList {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 1rem;
     }
     #optionsBar {
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: 20px;
+        margin-bottom: 0.75rem;
         justify-content: space-evenly;
-        gap: 10px;
     }
-    .outflex {
+    .baseDIV {
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
     }
     .rankflex {
         display: flex;
         justify-content: center;
         flex-shrink: 0;
         width: 30px;
-        font-size: 200%;
+        font-size: 2.25rem;
         font-weight: bold;
-        margin-right: 20px;
+        margin-right: 0.75rem;
     }
-    /* pending implementation */
-    .topten {
-        font-weight: bold;
+    .contentflex {
+        display: flex;
+        flex-flow: column;
     }
-    .rowflex {
-        padding-left: 10px;
-        padding-right: 10px;
+    .topflex {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
         background-color: #f2f2f7;
     }
     .poster {
         height: 200px;
         max-width: initial;
+    }
+    .wordflex {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
     .titlebar {
         display: flex;
@@ -83,7 +86,7 @@ aliases: [ "/top50films" ]
         flex-wrap: wrap;
     }
     .title, .ogtitle {
-        font-size: 150%;
+        font-size: 1.5rem;
         font-weight: bold;
         margin-right: 0.5rem;
     }
@@ -104,11 +107,10 @@ aliases: [ "/top50films" ]
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-
     // This is needed to store the contstructed pop-up div. Do not remove or use elsewhere.
     var internalDIV
 
-    // Fetches details from TMDB and builds/returns the internalDIV
+    // Fetches details from TMDB and returns the built internalDIV
     async function fetchTMDB(entry) {
         await fetch("https://api.themoviedb.org/3/movie/" + entry.tmdbid + "?api_key=7baf9dd01abb6752b69e0cbf77fd9b21&append_to_response=credits", {
             method: "GET"
@@ -122,47 +124,49 @@ aliases: [ "/top50films" ]
                         directors.push(entry.name);
                     }
                 })
-                    internalDIV = buildSuperDIV(tmbdresponse, entry, directors);
+                internalDIV = buildSuperDIV(tmbdresponse, entry, directors);
             })
         return internalDIV;
     }
 
     // internalDIV build
     function buildSuperDIV(tmbdresponse, entry, directors) {
-        const heroImage = (show) => (
-            `<div class="heroflex" style="display: ${show ? 'visible' : 'none'}">
-                <img class="heroImage" src="https://image.tmdb.org/t/p/w780${tmbdresponse.backdrop_path}" alt="movie image">
-            </div>`
-        )
-        return (
-        `<div class="outflex">
-            <div class="rankflex">
-                <p>${entry.rank}.</p>
+        const heroImage = (show) => (`
+            <div class="heroflex" style="display: ${show ? 'visible' : 'none'}">
+                <img class="heroImage" src="https://image.tmdb.org/t/p/original${tmbdresponse.backdrop_path}" alt="movie image">
             </div>
-            <div class="colflex">
-                <img class="poster" src="https://image.tmdb.org/t/p/w154${tmbdresponse.poster_path}" alt="movie poster">
-            </div>
-            <div class="rowflex">
-                <div class="titlebar">
-                    <div class="titleyear">
-                        <span class="title">${tmbdresponse.title}</span>
-                        <span class="ogtitle">${tmbdresponse.original_title}</span>
-                        <span class="year">${tmbdresponse.release_date.substring(0, 4)}</span>
-                    </div>
-                    <span class="director">${directors.join(', ')}</span>
-                </div>
-                <p class="mydesc">${entry.description}</p>
-                <p class="officialdesc">${tmbdresponse.overview}</p>
-            </div>
+            `)
+        return (`
+        <div class="rankflex">
+            <p>${entry.rank}.</p>
         </div>
-        ${heroImage(entry.heroImageURL)}
+        <div class="contentflex">
+            <div class="topflex">
+                <div class="posterflex">
+                    <img class="poster" src="https://image.tmdb.org/t/p/w154${tmbdresponse.poster_path}" alt="movie poster">
+                </div>
+                <div class="wordflex">
+                    <div class="titlebar">
+                        <div class="titleyear">
+                            <span class="title">${tmbdresponse.title}</span>
+                            <span class="ogtitle">${tmbdresponse.original_title}</span>
+                            <span class="year">${tmbdresponse.release_date.substring(0, 4)}</span>
+                        </div>
+                        <span class="director">${directors.join(', ')}</span>
+                    </div>
+                    <p class="mydesc">${entry.description}</p>
+                    <p class="officialdesc">${tmbdresponse.overview}</p>
+                </div>
+            </div>
+            ${heroImage(entry.heroImageURL)}
+        </div>
         `)
     };
 
     // FILM CARD SETUP
     async function populateFilmCard(entry, parentElement) {
         let baseDIV = document.createElement("div");
-        baseDIV.classList.add("custom");
+        baseDIV.classList.add("baseDIV");
         baseDIV.innerHTML = await fetchTMDB(entry);
         document.getElementById(parentElement).appendChild(baseDIV);
     }
@@ -191,7 +195,6 @@ aliases: [ "/top50films" ]
     });
 
     // BUTTONS
-
     $(document).ready(function(){
         $('#mydesc').on('click', function(event) {
             $(".mydesc").css('display', 'block')

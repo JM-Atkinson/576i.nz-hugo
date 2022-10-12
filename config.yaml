@@ -51,7 +51,7 @@ params:
 #  homeText: Welcome to the Vanilla theme demo. Have a look around. Maybe even eat some ice cream. NOTE: This is now fufilled via _index.md in /content
   footerText: "[About](/about) • [Disclaimers](/disclaimers) • [License](https://creativecommons.org/licenses/by-sa/4.0/) • [RSS](/post/index.xml) | Copyright © Josh Atkinson MMXXII"
   hideFooter: false
-  katex: true
+  katex: false
 
 markup:
   defaultMarkdownHandler: goldmark
