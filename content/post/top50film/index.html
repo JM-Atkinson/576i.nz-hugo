@@ -7,43 +7,104 @@ tags: [ "interactive", "film" ]
 aliases: [ "/top50films" ]
 ---
 
+<div id="optionsBar">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons" id="titletoggle">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="options" id="title" autocomplete="off" checked> English Title
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options" id="ogtitle" autocomplete="off"> Original Title
+        </label>
+    </div>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons" id="desctoggle">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="options" id="mydesc" autocomplete="off" checked> My notes
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options" id="officialdesc" autocomplete="off"> Official Description
+        </label>
+    </div>
+</div>
+
 <div id="entryList"></div>
 
 <style>
-    #entrylist {
+    #entryList {
         display: flex;
         flex-direction: column;
+        gap: 20px;
     }
-    .custom .outflex {
+    #optionsBar {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+    .outflex {
         display: flex;
         flex-flow: row nowrap;
-        align-self: flex-end;
-        background-color: lightgrey;
-        border-radius: 12px;
+        justify-content: center;
     }
-    .custom .colflex {
-        margin-right: 10px;
+    .rankflex {
+        display: flex;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 30px;
+        font-size: 200%;
+        font-weight: bold;
+        margin-right: 20px;
     }
-    .custom .rowflex {
-        margin-right: 10px;
+    /* pending implementation */
+    .topten {
+        font-weight: bold;
     }
-    .custom .poster {
+    /* required to remove the site wide border radius on images */
+    .colflex img {
+        border-radius: 0px !important;
+        border-top-left-radius: 12px !important;
+    }
+    .rowflex {
+        padding-left: 10px;
+        padding-right: 10px;
+        border-top-right-radius: 12px;
+        background-color: #f2f2f7;
+    }
+    .poster {
         height: 200px;
         max-width: initial;
-
     }
-    .custom .titleyear {
+    .titlebar {
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: baseline;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
-    .custom .title {
+    .titleyear {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .title, .ogtitle {
         font-size: 150%;
         font-weight: bold;
-        margin-right: 5px;
+        margin-right: 0.5rem;
+    }
+    .director {
+        font-style: italic;
+    }
+    /* sets the initial state where official description & ogtitle is hidden */
+    .officialdesc {
+        display: none;
+    }
+    .ogtitle {
+        display: none;
     }
 </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js" integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
 
@@ -51,19 +112,20 @@ aliases: [ "/top50films" ]
     var internalDIV
 
     // Fetches details from TMDB and builds/returns the internalDIV
-    async function fetchTMDB(tmdbid) {
-        await fetch("https://api.themoviedb.org/3/movie/" + tmdbid + "?api_key=7baf9dd01abb6752b69e0cbf77fd9b21&append_to_response=credits", {
+    async function fetchTMDB(entry) {
+        await fetch("https://api.themoviedb.org/3/movie/" + entry.tmdbid + "?api_key=7baf9dd01abb6752b69e0cbf77fd9b21&append_to_response=credits", {
             method: "GET"
           })
           .then(response => response.json())
-          .then(data => {
+          .then(tmbdresponse => {
+            console.log(tmbdresponse)
             var directors = [];
-            data.credits.crew.forEach(function(entry){
+            tmbdresponse.credits.crew.forEach(function(entry){
                     if (entry.job === 'Director') {
                         directors.push(entry.name);
                     }
                 })
-            internalDIV = '<div class="outflex"><div class="colflex"><img class="poster" src="https://image.tmdb.org/t/p/w154' + data.poster_path + '" alt=""></div><div class="rowflex"><div><span class="title">' + data.title + '</span><span class="year">' + data.release_date.substring(0, 4) + '</span></div><p class="desc">' + data.overview + '</p><span>Directed by: </span><span class="director">' + directors.join(', ') + '</span></div></div></div>'
+            internalDIV = '<div class="outflex"><div class="rankflex"><p>' + entry.rank + '.</p></div><div class="colflex"><img class="poster" src="https://image.tmdb.org/t/p/w154' + tmbdresponse.poster_path + '" alt=""></div><div class="rowflex"><div class="titlebar"><div class="titleyear"><span class="title">' + tmbdresponse.title + '</span><span class="ogtitle">' + tmbdresponse.original_title + '</span><span class="year">' + tmbdresponse.release_date.substring(0, 4) + '</span></div><span class="director">' + directors.join(', ') + '</span></div><p class="mydesc">' + entry.description + '</p><p class="officialdesc">' + tmbdresponse.overview + '</p></div></div></div>'
             })
         return internalDIV
     }
@@ -72,7 +134,7 @@ aliases: [ "/top50films" ]
     async function populateFilmCard(entry, parentElement) {
         let baseDIV = document.createElement("div");
         baseDIV.classList.add("custom");
-        baseDIV.innerHTML = await fetchTMDB(entry.tmdbid);
+        baseDIV.innerHTML = await fetchTMDB(entry);
         document.getElementById(parentElement).appendChild(baseDIV);
     }
 
@@ -98,5 +160,26 @@ aliases: [ "/top50films" ]
     }).catch(error => {
     console.error(error);
     });
+
+    // BUTTONS
+
+    $(document).ready(function(){
+        $('#mydesc').on('click', function(event) {
+            $(".mydesc").css('display', 'block')
+            $(".officialdesc").css('display', 'none')
+          });
+        $('#officialdesc').on('click', function(event) {
+            $(".mydesc").css('display', 'none')
+            $(".officialdesc").css('display', 'block')
+          });
+          $('#title').on('click', function(event) {
+            $(".title").css('display', 'block')
+            $(".ogtitle").css('display', 'none')
+          });
+        $('#ogtitle').on('click', function(event) {
+            $(".title").css('display', 'none')
+            $(".ogtitle").css('display', 'block')
+          });
+    })
 
 </script>
