@@ -6,9 +6,7 @@
       "hasNonEnglishName": true,
       "tmdbid": 83214,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet hendrerit sem. Fusce mollis quam a ornare iaculis. Mauris et magna lobortis, molestie diam quis, eleifend libero. Maecenas ut orci eget nulla aliquam efficitur id sit amet dui. Donec condimentum, felis sit amet placerat consectetur, ipsum nibh cursus odio, vel mollis diam augue vel nibh. Pellentesque a nunc sit amet quam varius euismod vitae sollicitudin nunc. Curabitur hendrerit ex quis ex ullamcorper laoreet. Fusce vel felis in risus gravida aliquet. Phasellus eleifend ligula nunc, in condimentum tortor bibendum sit amet. Cras nec tristique nunc. Proin lacinia consequat dolor eget eleifend. Ut a orci nisi. Donec in orci nec massa mollis sodales. Nullam consectetur ipsum et massa egestas venenatis. Phasellus quam nibh, fringilla quis augue ut, finibus blandit arcu. Quisque lacus risus, porta at velit quis, efficitur gravida magna. Fusce consectetur a elit nec vulputate. Suspendisse potenti. Vivamus blandit ornare.",
-      "hasHeroImage": true,
       "heroImageURL": "agbinv.png",
-      "hasSceneShoutout": true,
       "sceneShoutoutImageURL": "agbinvTrain.png",
       "sceneShoutoutDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet hendrerit sem. Fusce mollis quam a ornare iaculis. Mauris et magna lobortis, molestie diam quis, eleifend libero. Maecenas ut orci eget nulla aliquam efficitur id sit amet dui. Donec condimentum, felis sit amet placerat consectetur, ipsum nibh cursus odio, vel mollis diam augue vel nibh. Pellentesque a nunc sit amet quam varius euismod vitae sollicitudin nunc. Curabitur hendrerit ex quis ex ullamcorper laoreet. Fusce vel felis in risus gravida aliquet. Phasellus eleifend ligula nunc, in condimentum tortor bibendum sit amet. Cras nec tristique nunc. Proin lacinia consequat dolor eget eleifend. Ut a orci nisi. Donec in orci nec massa mollis sodales. Nullam consectetur ipsum et massa egestas venenatis. Phasellus quam nibh, fringilla quis augue ut, finibus blandit arcu. Quisque lacus risus, porta at velit quis, efficitur gravida magna. Fusce consectetur a elit nec vulputate. Suspendisse potenti. Vivamus blandit ornare."
     },
@@ -18,9 +16,7 @@
       "hasNonEnglishName": true,
       "tmdbid": 70846,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet hendrerit sem. Fusce mollis quam a ornare iaculis. Mauris et magna lobortis, molestie diam quis, eleifend libero. Maecenas ut orci eget nulla aliquam efficitur id sit amet dui. Donec condimentum, felis sit amet placerat consectetur, ipsum nibh cursus odio, vel mollis diam augue vel nibh. Pellentesque a nunc sit amet quam varius euismod vitae sollicitudin nunc. Curabitur hendrerit ex quis ex ullamcorper laoreet. Fusce vel felis in risus gravida aliquet. Phasellus eleifend ligula nunc, in condimentum tortor bibendum sit amet. Cras nec tristique nunc. Proin lacinia consequat dolor eget eleifend. Ut a orci nisi. Donec in orci nec massa mollis sodales. Nullam consectetur ipsum et massa egestas venenatis. Phasellus quam nibh, fringilla quis augue ut, finibus blandit arcu. Quisque lacus risus, porta at velit quis, efficitur gravida magna. Fusce consectetur a elit nec vulputate. Suspendisse potenti. Vivamus blandit ornare.",
-      "hasHeroImage": false,
-      "heroImageURL": "",
-      "hasSceneShoutout": false,
+      "heroImageURL": "a",
       "sceneShoutoutImageURL": "",
       "sceneShoutoutDescription": ""
     },
@@ -30,9 +26,7 @@
       "hasNonEnglishName": false,
       "tmdbid": 279,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet hendrerit sem. Fusce mollis quam a ornare iaculis. Mauris et magna lobortis, molestie diam quis, eleifend libero. Maecenas ut orci eget nulla aliquam efficitur id sit amet dui. Donec condimentum, felis sit amet placerat consectetur, ipsum nibh cursus odio, vel mollis diam augue vel nibh. Pellentesque a nunc sit amet quam varius euismod vitae sollicitudin nunc. Curabitur hendrerit ex quis ex ullamcorper laoreet. Fusce vel felis in risus gravida aliquet. Phasellus eleifend ligula nunc, in condimentum tortor bibendum sit amet. Cras nec tristique nunc. Proin lacinia consequat dolor eget eleifend. Ut a orci nisi. Donec in orci nec massa mollis sodales. Nullam consectetur ipsum et massa egestas venenatis. Phasellus quam nibh, fringilla quis augue ut, finibus blandit arcu. Quisque lacus risus, porta at velit quis, efficitur gravida magna. Fusce consectetur a elit nec vulputate. Suspendisse potenti. Vivamus blandit ornare.",
-      "hasHeroImage": false,
-      "heroImageURL": "",
-      "hasSceneShoutout": true,
+      "heroImageURL": "a",
       "sceneShoutoutImageURL": "amadeuspaper.png",
       "sceneShoutoutDescription": "WHAT A SCENE!"
     }

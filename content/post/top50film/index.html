@@ -29,6 +29,9 @@ aliases: [ "/top50films" ]
 <div id="entryList"></div>
 
 <style>
+    img {
+        border-radius: 0px !important;
+    }
     #entryList {
         display: flex;
         flex-direction: column;
@@ -59,15 +62,9 @@ aliases: [ "/top50films" ]
     .topten {
         font-weight: bold;
     }
-    /* required to remove the site wide border radius on images */
-    .colflex img {
-        border-radius: 0px !important;
-        border-top-left-radius: 12px !important;
-    }
     .rowflex {
         padding-left: 10px;
         padding-right: 10px;
-        border-top-right-radius: 12px;
         background-color: #f2f2f7;
     }
     .poster {
@@ -125,10 +122,42 @@ aliases: [ "/top50films" ]
                         directors.push(entry.name);
                     }
                 })
-            internalDIV = '<div class="outflex"><div class="rankflex"><p>' + entry.rank + '.</p></div><div class="colflex"><img class="poster" src="https://image.tmdb.org/t/p/w154' + tmbdresponse.poster_path + '" alt=""></div><div class="rowflex"><div class="titlebar"><div class="titleyear"><span class="title">' + tmbdresponse.title + '</span><span class="ogtitle">' + tmbdresponse.original_title + '</span><span class="year">' + tmbdresponse.release_date.substring(0, 4) + '</span></div><span class="director">' + directors.join(', ') + '</span></div><p class="mydesc">' + entry.description + '</p><p class="officialdesc">' + tmbdresponse.overview + '</p></div></div></div>'
+                    internalDIV = buildSuperDIV(tmbdresponse, entry, directors);
             })
-        return internalDIV
+        return internalDIV;
     }
+
+    // internalDIV build
+    function buildSuperDIV(tmbdresponse, entry, directors) {
+        const heroImage = (show) => (
+            `<div class="heroflex" style="display: ${show ? 'visible' : 'none'}">
+                <img class="heroImage" src="https://image.tmdb.org/t/p/w780${tmbdresponse.backdrop_path}" alt="movie image">
+            </div>`
+        )
+        return (
+        `<div class="outflex">
+            <div class="rankflex">
+                <p>${entry.rank}.</p>
+            </div>
+            <div class="colflex">
+                <img class="poster" src="https://image.tmdb.org/t/p/w154${tmbdresponse.poster_path}" alt="movie poster">
+            </div>
+            <div class="rowflex">
+                <div class="titlebar">
+                    <div class="titleyear">
+                        <span class="title">${tmbdresponse.title}</span>
+                        <span class="ogtitle">${tmbdresponse.original_title}</span>
+                        <span class="year">${tmbdresponse.release_date.substring(0, 4)}</span>
+                    </div>
+                    <span class="director">${directors.join(', ')}</span>
+                </div>
+                <p class="mydesc">${entry.description}</p>
+                <p class="officialdesc">${tmbdresponse.overview}</p>
+            </div>
+        </div>
+        ${heroImage(entry.heroImageURL)}
+        `)
+    };
 
     // FILM CARD SETUP
     async function populateFilmCard(entry, parentElement) {
