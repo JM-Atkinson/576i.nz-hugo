@@ -100,6 +100,15 @@ aliases: [ "/top50films" ]
     .ogtitle {
         display: none;
     }
+    .sceneshoutoutwordflex {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        background-color: #f2f2f7;
+    }
+    .sceneshoutouttitle {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js" integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -136,6 +145,15 @@ aliases: [ "/top50films" ]
                 <img class="heroImage" src="https://image.tmdb.org/t/p/original${tmbdresponse.backdrop_path}" alt="movie image">
             </div>
             `)
+        const sceneShoutout = (show) => (`
+            <div class="shoutoutflex" style="display: ${show ? 'visible' : 'none'}">
+                <div class="sceneshoutoutwordflex">
+                    <span class="sceneshoutouttitle">Scene Shoutout!</span>
+                    <span class="sceneshoutoutdesc">${entry.sceneShoutoutDescription}</span>
+                </div>
+                <img class="sceneShoutoutImage" src="https://image.tmdb.org/t/p/original${tmbdresponse.backdrop_path}" alt="movie image">
+            </div>
+            `)
         return (`
         <div class="rankflex">
             <p>${entry.rank}.</p>
@@ -159,6 +177,7 @@ aliases: [ "/top50films" ]
                 </div>
             </div>
             ${heroImage(entry.heroImageURL)}
+            ${sceneShoutout(entry.sceneShoutoutDescription)}
         </div>
         `)
     };
