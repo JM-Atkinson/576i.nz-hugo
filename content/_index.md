@@ -13,22 +13,23 @@ a, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
-.card-group {
+#cards {
   display: flex;
-}
-
-.card-column {
-  flex: 50%
+  flex-flow: wrap;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   display: flex;
+  flex-grow: 1;
+  flex-basis: 45%;
   justify-content: flex-start;
   text-align: right;
+  max-width: 22.5em;
   padding: 1rem 1rem 0 1rem;
   margin: 0 0 1rem 1rem;
+  
 }
 
 .card:hover {
@@ -49,29 +50,37 @@ Welcome to my wax lyrical about technology, product management, and other topics
 Are you looking for articles? You should check out [Articles](/post). If you want to learn about me, check out [About](/about) or visit my [LinkedIn](https://www.linkedin.com/in/josh-atkinson/).
 
 #### Friends of 576i.nz
-<div class="card-group">
-  <div class="card-column" id="cards">
-  </div>
+<div id="cards">
 </div>
 
 <script>
 
     const createWebsiteCard = (domain, description) => {
 
-        const card = document.createElement('a');
+        // const card = document.createElement('a');
 
-        card.setAttribute('href', `https://${domain}`);
-        card.setAttribute('target', '_blank');
-        card.setAttribute('rel', `noreferrer`);
+        // card.setAttribute('href', `https://${domain}`);
+        // card.setAttribute('target', '_blank');
+        // card.setAttribute('rel', `noreferrer`);
+
+        // card.innerHTML = `
+        //     <div class="card">
+        //         <img src="https://icon.horse/icon/${domain}" alt="${domain}" class="card-image">
+        //         <div class="description">
+        //             <h4><b>${domain}</b></h4> 
+        //             <p>${description}</p> 
+        //         </div>
+        //     </div>`
+
+        const card = document.createElement('div');
+        card.setAttribute('class', 'card');
 
         card.innerHTML = `
-            <div class="card">
                 <img src="https://icon.horse/icon/${domain}" alt="${domain}" class="card-image">
                 <div class="description">
                     <h4><b>${domain}</b></h4> 
                     <p>${description}</p> 
-                </div>
-            </div>`
+                </div>`
 
         return card;
     }
@@ -80,12 +89,16 @@ Are you looking for articles? You should check out [Articles](/post). If you wan
 
         const cards = [
             {
-                'domain': 'matteas.nz',
-                'description': 'Software Developer, Computer Engineer and Linux Enthusiast'
-            },
-            {
                 'domain': 'binu.nz',
                 'description': 'Lorem ipsum dolor sit amet'
+            },
+            {
+                'domain': 'manoj.nz',
+                'description': 'Lorem ipsum dolor sit amet'
+            },
+            {
+                'domain': 'matteas.nz',
+                'description': 'Software Developer, Computer Engineer and Linux Enthusiast'
             },
             {
                 'domain': 'timo.nz',
