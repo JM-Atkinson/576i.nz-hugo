@@ -50,44 +50,60 @@ Are you looking for articles? You should check out [Articles](/post). If you wan
 
 #### Friends of 576i.nz
 <div class="card-group">
-  <div class="card-column">
-    <a href="https://576i.nz" target="_blank" rel="noreferrer">
-      <div class="card">
-        <img src="globe.svg" alt="576i" class="card-image">
-        <div class="description">
-          <h4><b>576i.nz</b></h4> 
-          <p>Tech hobbyist and XML elitist</p> 
-        </div>
-      </div>
-    </a>
-    <a href="https://576i.nz" target="_blank" rel="noreferrer">
-      <div class="card">
-        <img src="globe.svg" alt="576i" class="card-image">
-        <div class="description">
-          <h4><b>576i.nz</b></h4> 
-          <p>Tech hobbyist and XML elitist</p> 
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="card-column">
-    <a href="https://576i.nz" target="_blank" rel="noreferrer">
-      <div class="card">
-        <img src="globe.svg" alt="576i" class="card-image">
-        <div class="description">
-          <h4><b>576i.nz</b></h4> 
-          <p>Tech hobbyist and XML elitist</p> 
-        </div>
-      </div>
-    </a>
-    <a href="https://576i.nz" target="_blank" rel="noreferrer">
-      <div class="card">
-        <img src="globe.svg" alt="576i" class="card-image">
-        <div class="description">
-          <h4><b>576i.nz</b></h4> 
-          <p>Tech hobbyist and XML elitist</p> 
-        </div>
-      </div>
-    </a>
+  <div class="card-column" id="cards">
   </div>
 </div>
+
+<script>
+
+    const createWebsiteCard = (domain, description) => {
+
+        const card = document.createElement('a');
+
+        card.setAttribute('href', `https://${domain}`);
+        card.setAttribute('target', '_blank');
+        card.setAttribute('rel', `noreferrer`);
+
+        card.innerHTML = `
+            <div class="card">
+                <img src="https://icon.horse/icon/${domain}" alt="${domain}" class="card-image">
+                <div class="description">
+                    <h4><b>${domain}</b></h4> 
+                    <p>${description}</p> 
+                </div>
+            </div>`
+
+        return card;
+    }
+
+    const renderWebsiteCards = () => {
+
+        const cards = [
+            {
+                'domain': 'matteas.nz',
+                'description': 'Software Developer, Computer Engineer and Linux Enthusiast'
+            },
+            {
+                'domain': 'binu.nz',
+                'description': 'Lorem ipsum dolor sit amet'
+            },
+            {
+                'domain': 'timo.nz',
+                'description': 'Lorem ipsum dolor sit amet'
+            },
+            {
+                'domain': 'pancake.nz',
+                'description': 'Lorem ipsum dolor sit amet'
+            },
+        ]
+
+        cards.forEach(card => {
+            const websiteCard = createWebsiteCard(card.domain, card.description);
+            document.getElementById("cards").appendChild(websiteCard);
+        })
+        
+    }
+
+    renderWebsiteCards();
+
+</script>
