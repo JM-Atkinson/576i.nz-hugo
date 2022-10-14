@@ -57,30 +57,19 @@ Are you looking for articles? You should check out [Articles](/post). If you wan
 
     const createWebsiteCard = (domain, description) => {
 
-        // const card = document.createElement('a');
+        const card = document.createElement('a');
 
-        // card.setAttribute('href', `https://${domain}`);
-        // card.setAttribute('target', '_blank');
-        // card.setAttribute('rel', `noreferrer`);
-
-        // card.innerHTML = `
-        //     <div class="card">
-        //         <img src="https://icon.horse/icon/${domain}" alt="${domain}" class="card-image">
-        //         <div class="description">
-        //             <h4><b>${domain}</b></h4> 
-        //             <p>${description}</p> 
-        //         </div>
-        //     </div>`
-
-        const card = document.createElement('div');
+        card.setAttribute('href', `https://${domain}`);
+        card.setAttribute('target', '_blank');
+        card.setAttribute('rel', `noreferrer`);
         card.setAttribute('class', 'card');
 
-        card.innerHTML = `
-                <img src="https://icon.horse/icon/${domain}" alt="${domain}" class="card-image">
-                <div class="description">
-                    <h4><b>${domain}</b></h4> 
-                    <p>${description}</p> 
-                </div>`
+        card.innerHTML = 
+        `<img src="https://icon.horse/icon/${domain}" alt="${domain}" class="card-image">
+        <div class="description">
+            <h4><b>${domain}</b></h4> 
+            <p>${description}</p> 
+        </div>`
 
         return card;
     }
