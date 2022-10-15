@@ -16,20 +16,24 @@ a, a:visited, a:hover, a:active {
 #cards {
   display: flex;
   flex-flow: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   display: flex;
-  flex-grow: 1;
-  flex-basis: 45%;
-  justify-content: flex-start;
+  flex-basis: 31%;
   text-align: right;
-  max-width: 22.5em;
   padding: 1rem 1rem 0 1rem;
-  margin: 0 0 1rem 1rem;
-  
+}
+
+@media (width < 600px) {
+  .card {
+    flex-grow: 1;
+    flex-basis: 48%;
+  }
 }
 
 .card:hover {
@@ -37,7 +41,7 @@ a, a:visited, a:hover, a:active {
 }
 
 .card-image {
-  width: 35%;
+  width: 20%;
 }
 
 .container {
@@ -87,14 +91,14 @@ Are you looking for articles? You should check out [Articles](/post). If you wan
             },
             {
                 'domain': 'matteas.nz',
-                'description': 'Software Developer, Computer Engineer and Linux Enthusiast'
-            },
-            {
-                'domain': 'timo.nz',
                 'description': 'Lorem ipsum dolor sit amet'
             },
             {
                 'domain': 'pancake.nz',
+                'description': 'Lorem ipsum dolor sit amet'
+            },
+            {
+                'domain': 'timo.nz',
                 'description': 'Lorem ipsum dolor sit amet'
             },
         ]
