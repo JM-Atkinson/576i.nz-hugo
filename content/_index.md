@@ -25,10 +25,13 @@ a, a:visited, a:hover, a:active {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   text-align: right;
   max-width: 174.217px;
   min-width: 174.217px;
-  padding: 1rem 1rem 0 1rem;
+  padding: 1rem 0;
 }
 
 @media (width < 400px) {
@@ -71,7 +74,7 @@ Are you looking for articles? You should check out [Articles](/post). If you wan
 
 <script>
 
-    const createWebsiteCard = (domain, description) => {
+    const createWebsiteCard = (domain) => {
 
         const card = document.createElement('a');
 
@@ -83,8 +86,7 @@ Are you looking for articles? You should check out [Articles](/post). If you wan
         card.innerHTML = 
         `<img src="https://icon.horse/icon/${domain}" alt="${domain}" class="card-image">
         <div class="card-text">
-            <h6 class="title"><b>${domain}</b></h6> 
-            <p class="description">${description}</p> 
+            <h6 class="title"><b>${domain}</b></h6>
         </div>`
 
         return card;
@@ -92,31 +94,10 @@ Are you looking for articles? You should check out [Articles](/post). If you wan
 
     const renderWebsiteCards = () => {
 
-        const cards = [
-            {
-                'domain': 'binu.nz',
-                'description': 'Lorem ipsum dolor sit amet'
-            },
-            {
-                'domain': 'manoj.nz',
-                'description': 'Lorem ipsum dolor sit amet'
-            },
-            {
-                'domain': 'matteas.nz',
-                'description': 'Lorem ipsum dolor sit amet'
-            },
-            {
-                'domain': 'pancake.nz',
-                'description': 'Lorem ipsum dolor sit amet'
-            },
-            {
-                'domain': 'timo.nz',
-                'description': 'Lorem ipsum dolor sit amet'
-            },
-        ]
+        const domains = ['binu.nz','manoj.nz','matteas.nz','pancake.nz','timo.nz']
 
-        cards.forEach(card => {
-            const websiteCard = createWebsiteCard(card.domain, card.description);
+        domains.forEach(domain => {
+            const websiteCard = createWebsiteCard(domain);
             document.getElementById("cards").appendChild(websiteCard);
         })
         
