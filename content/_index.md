@@ -18,15 +18,23 @@ a, a:visited, a:hover, a:active {
   flex-flow: wrap;
   gap: 1rem;
   justify-content: center;
+  margin: 0 6rem;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   display: flex;
-  flex-basis: 31%;
   text-align: right;
+  max-width: 174.217px;
+  min-width: 174.217px;
   padding: 1rem 1rem 0 1rem;
+}
+
+@media (width < 400px) {
+  #cards {
+    margin: unset;
+  }
 }
 
 @media (width < 600px) {
@@ -42,6 +50,10 @@ a, a:visited, a:hover, a:active {
 
 .card-image {
   width: 20%;
+}
+
+.card-text .description {
+  font-size: 0.75rem;
 }
 
 .container {
@@ -70,9 +82,9 @@ Are you looking for articles? You should check out [Articles](/post). If you wan
 
         card.innerHTML = 
         `<img src="https://icon.horse/icon/${domain}" alt="${domain}" class="card-image">
-        <div class="description">
-            <h4><b>${domain}</b></h4> 
-            <p>${description}</p> 
+        <div class="card-text">
+            <h6 class="title"><b>${domain}</b></h6> 
+            <p class="description">${description}</p> 
         </div>`
 
         return card;
