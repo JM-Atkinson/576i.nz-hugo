@@ -7,6 +7,8 @@ tags: [ "interactive", "film" ]
 aliases: [ "/top50films" ]
 ---
 
+<p>Welcome to my Top 50 Films of All Time, to date. This is intended to be a living list, reviewed on a semi-annual basis. This list is not intended to be objective, it is my personal preference, and is of course affected by bias. To read more about my biases in creating this list, see <a href="/filmbiases"]">here</a>. This list is also maintained on <a href="https://letterboxd.com/576i/list/top-50/">Letterboxd.</a></p>
+
 <div id="optionsBar">
     <div class="btn-group btn-group-toggle" data-toggle="buttons" id="titletoggle">
         <label class="btn btn-secondary active">
@@ -41,8 +43,19 @@ aliases: [ "/top50films" ]
     #optionsBar {
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: 0.75rem;
+        margin-bottom: 1.25rem;
         justify-content: space-evenly;
+    }
+    @media only screen and (max-width: 550px) {
+        #optionsBar {
+            gap: 10px
+        }
+        #titletoggle {
+            width: 100%
+        }
+        #desctoggle {
+            width: 100%
+        }
     }
     .baseDIV {
         display: flex;
@@ -51,7 +64,7 @@ aliases: [ "/top50films" ]
         display: flex;
         justify-content: center;
         flex-shrink: 0;
-        width: 30px;
+        width: 55px; /* set to be slightly wider than the widest number so that all the ranks have the same width */
         font-size: 2.25rem;
         font-weight: bold;
         margin-right: 0.75rem;
@@ -66,23 +79,31 @@ aliases: [ "/top50films" ]
         justify-content: center;
         background-color: #f2f2f7;
     }
+    @media only screen and (max-width: 500px) {
+        .topflex {
+            flex-flow: row wrap;
+        }
+    }
     .poster {
         height: 200px;
         max-width: initial;
     }
     .wordflex {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        padding-top: 0.5rem;
     }
     .titlebar {
         display: flex;
-        align-items: center;
+        /*align-items: center;*/ /* replaced by the below */
+        align-items: flex-end; /* copout solution to make year align to the bottom of the english title */
         justify-content: space-between;
         flex-wrap: wrap;
     }
     .titleyear {
         display: flex;
-        align-items: center;
+        /*align-items: center;*/ /* replaced by the below */
+        align-items: flex-end; /* copout solution to make year align to the bottom of the english title */
         flex-wrap: wrap;
     }
     .title, .ogtitle {
@@ -90,8 +111,12 @@ aliases: [ "/top50films" ]
         font-weight: bold;
         margin-right: 0.5rem;
     }
+    .year {
+        line-height: 30px; /* copout solution to make year align to the bottom of the english title */
+    }
     .director {
         font-style: italic;
+        line-height: 30px;
     }
     /* sets the initial state where official description & ogtitle is hidden */
     .officialdesc {
@@ -126,7 +151,7 @@ aliases: [ "/top50films" ]
           })
           .then(response => response.json())
           .then(tmbdresponse => {
-            console.log(tmbdresponse)
+            //console.log(tmbdresponse)
             var directors = [];
             tmbdresponse.credits.crew.forEach(function(entry){
                     if (entry.job === 'Director') {
@@ -156,7 +181,7 @@ aliases: [ "/top50films" ]
             `)
         return (`
         <div class="rankflex">
-            <p>${entry.Rank}.</p>
+            <p>${entry.rank}.</p>
         </div>
         <div class="contentflex">
             <div class="topflex">
@@ -176,7 +201,7 @@ aliases: [ "/top50films" ]
                     <p class="officialdesc">${tmbdresponse.overview}</p>
                 </div>
             </div>
-            ${heroImage(entry.heroImageURL)}
+            ${heroImage(entry.heroImageUrl)}
             ${sceneShoutout(entry.sceneShoutoutDescription)}
         </div>
         `)
@@ -186,6 +211,7 @@ aliases: [ "/top50films" ]
     async function populateFilmCard(entry, parentElement) {
         let baseDIV = document.createElement("div");
         baseDIV.classList.add("baseDIV");
+        baseDIV.style = `order: ${entry.rank}`
         baseDIV.innerHTML = await fetchTMDB(entry);
         document.getElementById(parentElement).appendChild(baseDIV);
     }
@@ -202,12 +228,15 @@ aliases: [ "/top50films" ]
 
     // MAIN ROUTINE
     console.log("Fetching data...");
-    getJSON("movies.json").then(data => {
+    getJSON("movies.json").then(async data => {
 //        for (let i = 0; i < data.entries.length; i++) {
 //            populateFilmCard(data.entries[i], "entryList")        
 //        }
-        data.entries.map(entry => {
-            populateFilmCard(entry, "entryList")
+        await data.map(async entry => {
+            if (entry.t50 === true) {
+                //console.log(entry.rank)
+                await populateFilmCard(entry, "entryList")            
+            }
         })
     }).catch(error => {
     console.error(error);
