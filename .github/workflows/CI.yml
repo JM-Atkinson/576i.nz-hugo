@@ -21,4 +21,4 @@ jobs:
           token: ${{ secrets.PAT }}
           repository: ${{ secrets.TARGET_REPO }}
           event-type: ci-dispatch
-          client-payload: '{"ref": "${{ github.ref }}", "repository": "${{ github.repository }}", "app": "${{ env.APP_NAME }}", "pod": "${{ env.POD_NAME }}", "server_url" : "${{ env.SERVER_URL }}"}'
+          client-payload: '{"ref": "${{ github.ref }}", "repository": "${{ github.repository }}", "app": "${{ env.APP_NAME }}", "pod": "${{ env.POD_NAME }}", "server_url" : "${{ secrets.SERVER_URL }}"}'
