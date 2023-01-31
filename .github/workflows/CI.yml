@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+ 
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    
+    env:
+      APP_NAME: "576i.nz"
+      POD_NAME: "fivesevensix"
+    
+    steps:
+      - name: Dispatch CI event
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PAT }}
+          repository: ${{ secrets.TARGET_REPO }}
+          event-type: ci-dispatch
+          client-payload: '{"ref": "${{ github.ref }}", "repository": "${{ github.repository }}", "app": "${{ env.APP_NAME }}", "pod": "${{ env.POD_NAME }}", "server_url" : "${{ env.SERVER_URL }}"}'
