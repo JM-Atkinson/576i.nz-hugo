@@ -1,10 +1,12 @@
 ---
 title: "So you want me to like your movie?"
-date: 2022-10-10T01:26:38+13:00
-draft: true
+date: 2023-02-01T01:26:39+13:00
+draft: false
 tags: [ "film" ]
 aliases: [ "/filmbiases" ]
 ---
+
+{{< figure src="amadeus.jpg" caption="" attr="One of the most exemplary movies! Amadeus (1984)" attrlink="" >}}
 
 As anyone learns in Ancient History 101 at any university, bias is probably the _single_ most important thing when reading historical texts. It's important to put yourself in the mind of the individual who wrote it and imagine:
 
@@ -45,6 +47,6 @@ So, without further ado, a list of eight things you should do to make me like yo
     *  Exemplary movies: Raiders of the Lost Ark (1981), Lost in Translation (2003), Linda Linda Linda (2005), Chungking Express (1994) in respective order
 8.  **Include strong religious, especially Christian, symbolism and themes.**
     *  Bonus points for Catholicism. Bonus points for Nuns.
-    *  Exemplary movies: Belfast (2021), Sister Act (1992), The Sound of Music (1965), Stations of the Cross (2014)
+    *  Exemplary movies: Amadeus (1984), Belfast (2021), Sister Act (1992), The Sound of Music (1965), Stations of the Cross (2014)
 
 Let me know if you see other recurring themes in my Top 50 films!
